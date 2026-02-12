@@ -445,14 +445,37 @@
             padding: 0 0.25rem;
         }
 
+        .tablet-scroll-container {
+            overflow-x: auto;
+            padding-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            scrollbar-width: thin;
+            scrollbar-color: var(--blue) #2a2a29;
+        }
+
+        .tablet-scroll-container::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .tablet-scroll-container::-webkit-scrollbar-track {
+            background: #2a2a29;
+            border-radius: 3px;
+        }
+
+        .tablet-scroll-container::-webkit-scrollbar-thumb {
+            background: var(--blue);
+            border-radius: 3px;
+        }
+
         .tablet-screenshots {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            display: flex;
             gap: 1.5rem;
-            margin-top: 2rem;
+            padding: 0.5rem 0;
         }
 
         .tablet-screenshot {
+            flex-shrink: 0;
+            width: 380px;
             border-radius: 10px;
             overflow: hidden;
             transition: transform 0.3s;
@@ -489,6 +512,7 @@
 
         @media (max-width: 768px) {
             .phone-screenshot { width: 180px; }
+            .tablet-screenshot { width: 300px; }
         }
 
         /* ── Credentials ── */
@@ -891,36 +915,49 @@
 
             <!-- Tablet Screenshots -->
             <div class="screenshots-section-label" style="color: var(--blue);">Tablet Views</div>
-            <div class="tablet-screenshots">
-                <div class="tablet-screenshot fade-in">
-                    <img src="images/tablet/create-sacco-group.png" alt="Create SACCO group - tablet" loading="lazy">
-                </div>
-                <div class="tablet-screenshot fade-in">
-                    <img src="images/tablet/member-dashboard.png" alt="Member dashboard - tablet" loading="lazy">
-                </div>
-                <div class="tablet-screenshot fade-in">
-                    <img src="images/tablet/member-loans.png" alt="Member loans - tablet" loading="lazy">
-                </div>
-                <div class="tablet-screenshot fade-in">
-                    <img src="images/tablet/member-fines.png" alt="Member fines - tablet" loading="lazy">
-                </div>
-                <div class="tablet-screenshot fade-in">
-                    <img src="images/tablet/member-expenses.png" alt="Member expenses - tablet" loading="lazy">
-                </div>
-                <div class="tablet-screenshot fade-in">
-                    <img src="images/tablet/admin-functions.png" alt="Admin functions - tablet" loading="lazy">
-                </div>
-                <div class="tablet-screenshot fade-in">
-                    <img src="images/tablet/admin-member-management.png" alt="Admin member management - tablet" loading="lazy">
-                </div>
-                <div class="tablet-screenshot fade-in">
-                    <img src="images/tablet/admin-loan-management.png" alt="Admin loan management - tablet" loading="lazy">
-                </div>
-                <div class="tablet-screenshot fade-in">
-                    <img src="images/tablet/admin-contributions-management.png" alt="Admin contributions - tablet" loading="lazy">
-                </div>
-                <div class="tablet-screenshot fade-in">
-                    <img src="images/tablet/admin-reports-analytics.png" alt="Admin reports - tablet" loading="lazy">
+            <div class="scroll-hint">Scroll to explore &rarr;</div>
+            <div class="tablet-scroll-container">
+                <div class="tablet-screenshots">
+                    <div class="tablet-screenshot">
+                        <img src="images/tablet/create-sacco-group.png" alt="Create SACCO group - tablet" loading="lazy">
+                        <div class="screenshot-label">Create SACCO Group</div>
+                    </div>
+                    <div class="tablet-screenshot">
+                        <img src="images/tablet/member-dashboard.png" alt="Member dashboard - tablet" loading="lazy">
+                        <div class="screenshot-label">Member Dashboard</div>
+                    </div>
+                    <div class="tablet-screenshot">
+                        <img src="images/tablet/member-loans.png" alt="Member loans - tablet" loading="lazy">
+                        <div class="screenshot-label">Member Loans</div>
+                    </div>
+                    <div class="tablet-screenshot">
+                        <img src="images/tablet/member-fines.png" alt="Member fines - tablet" loading="lazy">
+                        <div class="screenshot-label">Member Fines</div>
+                    </div>
+                    <div class="tablet-screenshot">
+                        <img src="images/tablet/member-expenses.png" alt="Member expenses - tablet" loading="lazy">
+                        <div class="screenshot-label">Member Expenses</div>
+                    </div>
+                    <div class="tablet-screenshot">
+                        <img src="images/tablet/admin-functions.png" alt="Admin functions - tablet" loading="lazy">
+                        <div class="screenshot-label">Admin Functions</div>
+                    </div>
+                    <div class="tablet-screenshot">
+                        <img src="images/tablet/admin-member-management.png" alt="Admin member management - tablet" loading="lazy">
+                        <div class="screenshot-label">Admin Members</div>
+                    </div>
+                    <div class="tablet-screenshot">
+                        <img src="images/tablet/admin-loan-management.png" alt="Admin loan management - tablet" loading="lazy">
+                        <div class="screenshot-label">Admin Loans</div>
+                    </div>
+                    <div class="tablet-screenshot">
+                        <img src="images/tablet/admin-contributions-management.png" alt="Admin contributions - tablet" loading="lazy">
+                        <div class="screenshot-label">Admin Contributions</div>
+                    </div>
+                    <div class="tablet-screenshot">
+                        <img src="images/tablet/admin-reports-analytics.png" alt="Admin reports - tablet" loading="lazy">
+                        <div class="screenshot-label">Reports & Analytics</div>
+                    </div>
                 </div>
             </div>
         </div>
