@@ -344,6 +344,153 @@
             color: var(--light);
         }
 
+        /* ── App Showcase ── */
+        .app-showcase {
+            margin-top: 3rem;
+            padding-top: 3rem;
+            border-top: 1px solid #2a2a29;
+        }
+
+        .app-showcase-header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .app-showcase-header h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--light);
+        }
+
+        .app-showcase-header .badge {
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.65rem;
+            font-weight: 600;
+            padding: 0.3rem 0.7rem;
+            border-radius: 4px;
+            background: rgba(217, 119, 87, 0.2);
+            color: var(--terra-cotta);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .app-showcase-desc {
+            font-size: 1rem;
+            color: var(--mid-gray);
+            line-height: 1.6;
+            max-width: 700px;
+            margin-bottom: 2rem;
+        }
+
+        .app-showcase-desc strong {
+            color: var(--terra-cotta);
+        }
+
+        .phone-scroll-container {
+            overflow-x: auto;
+            padding-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            scrollbar-width: thin;
+            scrollbar-color: var(--terra-cotta) #2a2a29;
+        }
+
+        .phone-scroll-container::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .phone-scroll-container::-webkit-scrollbar-track {
+            background: #2a2a29;
+            border-radius: 3px;
+        }
+
+        .phone-scroll-container::-webkit-scrollbar-thumb {
+            background: var(--terra-cotta);
+            border-radius: 3px;
+        }
+
+        .phone-screenshots {
+            display: flex;
+            gap: 1.5rem;
+            padding: 0.5rem 0;
+        }
+
+        .phone-screenshot {
+            flex-shrink: 0;
+            width: 220px;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+        }
+
+        .phone-screenshot:hover {
+            transform: scale(1.03);
+        }
+
+        .phone-screenshot img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .screenshot-label {
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.7rem;
+            color: var(--mid-gray);
+            text-align: center;
+            margin-top: 0.5rem;
+            padding: 0 0.25rem;
+        }
+
+        .tablet-screenshots {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .tablet-screenshot {
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        .tablet-screenshot:hover {
+            transform: scale(1.02);
+        }
+
+        .tablet-screenshot img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .screenshots-section-label {
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1rem;
+            margin-top: 2.5rem;
+        }
+
+        .scroll-hint {
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.75rem;
+            color: var(--mid-gray);
+            margin-bottom: 0.75rem;
+            opacity: 0.7;
+        }
+
+        @media (max-width: 768px) {
+            .phone-screenshot { width: 180px; }
+        }
+
         /* ── Credentials ── */
         .credentials-grid {
             display: grid;
@@ -614,13 +761,16 @@
         <div class="projects-grid">
             <div class="project-card fade-in">
                 <div class="project-type" style="color: var(--terra-cotta);">Mobile Application</div>
-                <h3>SACCO Management App</h3>
-                <p>A fully functional savings and credit cooperative management application. Built entirely with Claude Code — no prior mobile development experience. Currently under review in app stores.</p>
+                <h3>Money Hive — SACCO Management App</h3>
+                <p>A fully functional savings and credit cooperative management application with member dashboards, admin tools, loan management, reports, and more. Built entirely with Claude Code — no prior mobile development experience. Under app store review.</p>
                 <div>
                     <span class="tech-tag">Claude Code</span>
                     <span class="tech-tag">Mobile App</span>
                     <span class="tech-tag">Finance</span>
+                    <span class="tech-tag">React Native</span>
                 </div>
+                <br>
+                <a href="#app-showcase" class="project-link">See Screenshots &darr;</a>
             </div>
 
             <div class="project-card fade-in">
@@ -679,6 +829,102 @@
                     <span class="tech-tag">Meta</span>
                 </div>
             </div>
+        </div>
+
+        <!-- App Showcase -->
+        <div class="app-showcase fade-in" id="app-showcase">
+            <div class="app-showcase-header">
+                <h3>Money Hive — SACCO Management App</h3>
+                <span class="badge">Built with Claude Code</span>
+            </div>
+            <p class="app-showcase-desc">
+                A complete savings and credit cooperative (SACCO) management platform — featuring group creation, member dashboards, loan management, contribution tracking, fines, expenses, admin tools, and PDF/CSV reports. <strong>Built from scratch by a physician with zero software engineering training</strong>, using only Claude Code. Currently under review in app stores.
+            </p>
+
+            <!-- Phone Screenshots -->
+            <div class="screenshots-section-label" style="color: var(--terra-cotta);">Mobile App Screenshots</div>
+            <div class="scroll-hint">Scroll to explore &rarr;</div>
+            <div class="phone-scroll-container">
+                <div class="phone-screenshots">
+                    <div class="phone-screenshot">
+                        <img src="images/phone/1-create-group.png" alt="Create savings group" loading="lazy">
+                        <div class="screenshot-label">Create Group</div>
+                    </div>
+                    <div class="phone-screenshot">
+                        <img src="images/phone/2-invite-members.png" alt="Invite members" loading="lazy">
+                        <div class="screenshot-label">Invite Members</div>
+                    </div>
+                    <div class="phone-screenshot">
+                        <img src="images/phone/3-member-dashboard.png" alt="Member dashboard" loading="lazy">
+                        <div class="screenshot-label">Member Dashboard</div>
+                    </div>
+                    <div class="phone-screenshot">
+                        <img src="images/phone/4-member-loans.png" alt="Member loans" loading="lazy">
+                        <div class="screenshot-label">Loans</div>
+                    </div>
+                    <div class="phone-screenshot">
+                        <img src="images/phone/5-member-fines.png" alt="Member fines" loading="lazy">
+                        <div class="screenshot-label">Fines</div>
+                    </div>
+                    <div class="phone-screenshot">
+                        <img src="images/phone/6-member-expenses.png" alt="Member expenses" loading="lazy">
+                        <div class="screenshot-label">Expenses</div>
+                    </div>
+                    <div class="phone-screenshot">
+                        <img src="images/phone/7-admin-dashboard.png" alt="Admin dashboard" loading="lazy">
+                        <div class="screenshot-label">Admin Dashboard</div>
+                    </div>
+                    <div class="phone-screenshot">
+                        <img src="images/phone/8-admin-members.png" alt="Admin member management" loading="lazy">
+                        <div class="screenshot-label">Admin Members</div>
+                    </div>
+                    <div class="phone-screenshot">
+                        <img src="images/phone/9-admin-reports.png" alt="Reports and analytics" loading="lazy">
+                        <div class="screenshot-label">Reports & Analytics</div>
+                    </div>
+                    <div class="phone-screenshot">
+                        <img src="images/phone/10-admin-contributions.png" alt="Admin contributions" loading="lazy">
+                        <div class="screenshot-label">Contributions</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tablet Screenshots -->
+            <div class="screenshots-section-label" style="color: var(--blue);">Tablet Views</div>
+            <div class="tablet-screenshots">
+                <div class="tablet-screenshot fade-in">
+                    <img src="images/tablet/create-sacco-group.png" alt="Create SACCO group - tablet" loading="lazy">
+                </div>
+                <div class="tablet-screenshot fade-in">
+                    <img src="images/tablet/member-dashboard.png" alt="Member dashboard - tablet" loading="lazy">
+                </div>
+                <div class="tablet-screenshot fade-in">
+                    <img src="images/tablet/member-loans.png" alt="Member loans - tablet" loading="lazy">
+                </div>
+                <div class="tablet-screenshot fade-in">
+                    <img src="images/tablet/member-fines.png" alt="Member fines - tablet" loading="lazy">
+                </div>
+                <div class="tablet-screenshot fade-in">
+                    <img src="images/tablet/member-expenses.png" alt="Member expenses - tablet" loading="lazy">
+                </div>
+                <div class="tablet-screenshot fade-in">
+                    <img src="images/tablet/admin-functions.png" alt="Admin functions - tablet" loading="lazy">
+                </div>
+                <div class="tablet-screenshot fade-in">
+                    <img src="images/tablet/admin-member-management.png" alt="Admin member management - tablet" loading="lazy">
+                </div>
+                <div class="tablet-screenshot fade-in">
+                    <img src="images/tablet/admin-loan-management.png" alt="Admin loan management - tablet" loading="lazy">
+                </div>
+                <div class="tablet-screenshot fade-in">
+                    <img src="images/tablet/admin-contributions-management.png" alt="Admin contributions - tablet" loading="lazy">
+                </div>
+                <div class="tablet-screenshot fade-in">
+                    <img src="images/tablet/admin-reports-analytics.png" alt="Admin reports - tablet" loading="lazy">
+                </div>
+            </div>
+        </div>
+
         </div>
     </div>
 </div>
