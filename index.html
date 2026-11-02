@@ -3,22 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Ismail Mbabali — Physician & Tech Builder</title>
-    <meta name="description" content="Dr. Ismail Mbabali — Physician, Johns Hopkins MPH, USAID veteran, and tech builder creating mobile apps, websites, and digital tools from Kampala, Uganda.">
+    <title>Dr. Ismail Mbabali | Physician, Epidemiologist and Health-Data Builder</title>
+    <meta name="description" content="Dr. Ismail Mbabali is a Kampala-based physician and Johns Hopkins-trained epidemiologist with 12+ years in HIV and TB programme leadership, monitoring and evaluation, and health data systems, who also builds apps, platforms and websites with Claude Code.">
     <meta name="theme-color" content="#141413">
     <link rel="canonical" href="https://imbabali.github.io">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Dr. Ismail Mbabali — Physician & Tech Builder">
-    <meta property="og:description" content="Physician, Johns Hopkins MPH, and tech builder shipping mobile apps, websites, and digital tools from Kampala, Uganda.">
+    <meta property="og:title" content="Dr. Ismail Mbabali | Physician, Epidemiologist and Health-Data Builder">
+    <meta property="og:description" content="Physician and Johns Hopkins-trained epidemiologist with 12+ years in HIV and TB programmes and health data systems, now also shipping apps, platforms and websites from Kampala, Uganda.">
     <meta property="og:url" content="https://imbabali.github.io">
     <meta property="og:image" content="https://imbabali.github.io/images/profile.jpg">
+    <meta property="og:image:width" content="602">
+    <meta property="og:image:height" content="602">
+    <meta property="og:image:alt" content="Portrait of Dr. Ismail Mbabali">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Dr. Ismail Mbabali — Physician & Tech Builder">
-    <meta name="twitter:description" content="Physician and tech builder shipping mobile apps, websites, and digital tools from Kampala, Uganda.">
+    <meta name="twitter:title" content="Dr. Ismail Mbabali | Physician, Epidemiologist and Health-Data Builder">
+    <meta name="twitter:description" content="Physician and epidemiologist with 12+ years in HIV and TB programmes and health data systems, now also shipping apps, platforms and websites from Kampala, Uganda.">
     <meta name="twitter:image" content="https://imbabali.github.io/images/profile.jpg">
 
     <!-- Favicon -->
@@ -28,20 +31,26 @@
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Dr. Ismail Mbabali",
-        "jobTitle": "Physician & Tech Builder",
+        "@type": "ProfilePage",
         "url": "https://imbabali.github.io",
-        "sameAs": [
-            "https://github.com/imbabali",
-            "https://www.linkedin.com/in/ismail-mbabali"
-        ],
-        "alumniOf": [
-            {"@type": "CollegeOrUniversity", "name": "Johns Hopkins Bloomberg School of Public Health"},
-            {"@type": "CollegeOrUniversity", "name": "Makerere University"}
-        ],
-        "knowsAbout": ["Public Health", "Mobile App Development", "AI-Powered Development", "Health Systems"],
-        "address": {"@type": "PostalAddress", "addressLocality": "Kampala", "addressCountry": "UG"}
+        "mainEntity": {
+            "@type": "Person",
+            "name": "Dr. Ismail Mbabali",
+            "jobTitle": "Physician, Epidemiologist and Health-Data Builder",
+            "description": "Kampala-based physician and Johns Hopkins-trained epidemiologist with 12+ years in HIV and TB programme leadership, monitoring and evaluation, and health data systems, who also builds apps, platforms and websites with Claude Code.",
+            "image": "https://imbabali.github.io/images/profile.jpg",
+            "url": "https://imbabali.github.io",
+            "sameAs": [
+                "https://github.com/imbabali",
+                "https://www.linkedin.com/in/ismail-mbabali"
+            ],
+            "alumniOf": [
+                {"@type": "CollegeOrUniversity", "name": "Johns Hopkins Bloomberg School of Public Health"},
+                {"@type": "CollegeOrUniversity", "name": "Makerere University"}
+            ],
+            "knowsAbout": ["Public Health", "Epidemiology", "Biostatistics", "HIV Prevention", "Monitoring and Evaluation", "Health Information Systems", "DHIS2", "Mobile App Development", "AI-Powered Development"],
+            "address": {"@type": "PostalAddress", "addressLocality": "Kampala", "addressCountry": "UG"}
+        }
     }
     </script>
 
@@ -57,7 +66,10 @@
             --deep-orange: #C15F3C;
             --blue: #6a9bcc;
             --green: #788c5d;
-            --mid-gray: #7a7870;
+            --mid-gray: #6b6960;
+            --terra-text: #a94f2d;
+            --blue-text: #3a6896;
+            --green-text: #5a6b44;
             --mid-gray-decorative: #b0aea5;
             --light-gray: #e8e6dc;
             --warm-cream: #eeece2;
@@ -68,8 +80,17 @@
             --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
         }
 
+        /* Text tokens on dark surfaces: the light-surface shades above fail
+           contrast there, and these fail it on light surfaces. */
+        .section-dark, nav, footer, .stat-card.featured, .project-card {
+            --mid-gray: #9c9a91;
+            --terra-text: #d97757;
+            --blue-text: #6a9bcc;
+            --green-text: #95a878;
+        }
+
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; scrollbar-gutter: stable; }
+        html { scroll-behavior: smooth; scrollbar-gutter: stable; scroll-padding-top: 80px; }
 
         body {
             font-family: 'Lora', Georgia, serif;
@@ -86,7 +107,7 @@
             top: -100%;
             left: 1rem;
             background: var(--terra-cotta);
-            color: white;
+            color: var(--dark);
             padding: 0.5rem 1rem;
             border-radius: 0 0 8px 8px;
             font-family: 'Inter', sans-serif;
@@ -108,7 +129,7 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(20, 20, 19, 0.7);
+            background: rgba(20, 20, 19, 0.94);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border-bottom: 1px solid rgba(255,255,255,0.05);
@@ -134,7 +155,7 @@
             text-decoration: none;
             letter-spacing: -0.01em;
         }
-        nav .logo span { color: var(--terra-cotta); }
+        nav .logo span { color: var(--terra-text); }
 
         nav .nav-links {
             display: flex;
@@ -180,7 +201,7 @@
             color: var(--mid-gray-decorative);
             transition: color 0.3s var(--ease-out-expo);
         }
-        nav .nav-icon:hover { color: var(--terra-cotta); }
+        nav .nav-icon:hover { color: var(--terra-text); }
         nav .nav-icon svg { width: 18px; height: 18px; fill: currentColor; }
 
         /* ── Hamburger ── */
@@ -216,7 +237,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 120px 2rem 60px;
+            padding: 120px 2rem 120px;
             max-width: 1200px;
             margin: 0 auto;
             position: relative;
@@ -245,7 +266,7 @@
             font-family: 'Inter', sans-serif;
             font-size: clamp(0.72rem, 1vw, 0.82rem);
             font-weight: 600;
-            color: var(--terra-cotta);
+            color: var(--terra-text);
             text-transform: uppercase;
             letter-spacing: 0.14em;
             margin-bottom: 1.25rem;
@@ -267,7 +288,7 @@
             transform: translateY(20px);
             animation: hero-enter 0.8s var(--ease-out-expo) 0.35s forwards;
         }
-        .hero h1 span { color: var(--terra-cotta); }
+        .hero h1 span { color: var(--terra-text); }
 
         .accent-bar {
             width: 48px;
@@ -335,7 +356,7 @@
             font-family: 'Inter', sans-serif;
             font-size: 0.68rem;
             font-weight: 500;
-            color: var(--mid-gray-decorative);
+            color: var(--mid-gray);
             text-transform: uppercase;
             letter-spacing: 0.1em;
         }
@@ -369,11 +390,11 @@
 
         .btn-primary {
             background: var(--terra-cotta);
-            color: var(--light);
+            color: var(--dark);
             box-shadow: 0 4px 14px rgba(217, 119, 87, 0.25);
         }
         .btn-primary:hover {
-            background: var(--deep-orange);
+            background: #e48b6d;
             box-shadow: 0 6px 20px rgba(217, 119, 87, 0.35);
             transform: translateY(-1px);
         }
@@ -418,7 +439,7 @@
             font-family: 'Inter', sans-serif;
             font-size: 0.72rem;
             font-weight: 600;
-            color: var(--terra-cotta);
+            color: var(--terra-text);
             text-transform: uppercase;
             letter-spacing: 0.14em;
             margin-bottom: 0.75rem;
@@ -529,9 +550,9 @@
             letter-spacing: 0.1em;
             margin-bottom: 0.5rem;
         }
-        .timeline-phase-label.orange { color: var(--terra-cotta); }
-        .timeline-phase-label.blue { color: var(--blue); }
-        .timeline-phase-label.green { color: var(--green); }
+        .timeline-phase-label.orange { color: var(--terra-text); }
+        .timeline-phase-label.blue { color: var(--blue-text); }
+        .timeline-phase-label.green { color: var(--green-text); }
 
         .timeline-phase h3 {
             font-family: 'Inter', sans-serif;
@@ -573,12 +594,12 @@
         }
         .filter-tab:hover {
             border-color: rgba(217, 119, 87, 0.4);
-            color: var(--terra-cotta);
+            color: var(--terra-text);
         }
         .filter-tab.active {
             background: var(--terra-cotta);
             border-color: var(--terra-cotta);
-            color: white;
+            color: var(--dark);
             box-shadow: 0 2px 12px rgba(217, 119, 87, 0.3);
         }
 
@@ -660,10 +681,10 @@
             text-transform: uppercase;
             letter-spacing: 0.04em;
         }
-        .status-live { background: rgba(120, 140, 93, 0.15); color: var(--green); }
-        .status-dev { background: rgba(106, 155, 204, 0.15); color: var(--blue); }
-        .status-deploying { background: rgba(217, 119, 87, 0.15); color: var(--terra-cotta); }
-        .status-beta { background: rgba(217, 119, 87, 0.15); color: var(--terra-cotta); }
+        .status-live { background: rgba(120, 140, 93, 0.15); color: var(--green-text); }
+        .status-dev { background: rgba(106, 155, 204, 0.15); color: var(--blue-text); }
+        .status-deploying { background: rgba(217, 119, 87, 0.15); color: var(--terra-text); }
+        .status-beta { background: rgba(217, 119, 87, 0.15); color: #e48b6d; }
 
         .project-card h3 {
             font-family: 'Inter', sans-serif;
@@ -691,7 +712,7 @@
             padding: 0.22rem 0.55rem;
             border-radius: 6px;
             background: rgba(217, 119, 87, 0.1);
-            color: var(--terra-cotta);
+            color: var(--terra-text);
         }
 
         .project-links { margin-top: 1rem; display: flex; gap: 1.25rem; }
@@ -700,7 +721,7 @@
             font-family: 'Inter', sans-serif;
             font-size: 0.78rem;
             font-weight: 500;
-            color: var(--terra-cotta);
+            color: var(--terra-text);
             text-decoration: none;
             transition: all 0.3s var(--ease-out-expo);
             display: inline-flex;
@@ -742,7 +763,7 @@
             padding: 0.3rem 0.75rem;
             border-radius: 100px;
             background: rgba(217, 119, 87, 0.15);
-            color: var(--terra-cotta);
+            color: var(--terra-text);
             text-transform: uppercase;
             letter-spacing: 0.08em;
         }
@@ -755,7 +776,7 @@
             margin: 0 auto 2.5rem;
             text-align: center;
         }
-        .app-showcase-desc strong { color: var(--terra-cotta); }
+        .app-showcase-desc strong { color: var(--terra-text); }
 
         /* ── Carousel ── */
         .carousel-container {
@@ -774,7 +795,27 @@
             width: max-content;
             animation: carousel-scroll 40s linear infinite;
         }
-        .carousel-track:hover { animation-play-state: paused; }
+        .carousel-track:hover, .carousel-track.paused { animation-play-state: paused; }
+        .carousel-toggle {
+            display: block;
+            margin: 0 auto 0.5rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 0.3rem 0.9rem;
+            border-radius: 100px;
+            border: 1px solid rgba(255,255,255,0.18);
+            background: transparent;
+            color: var(--mid-gray);
+            cursor: pointer;
+        }
+        .carousel-toggle:hover, .carousel-toggle:focus-visible { color: var(--light); border-color: var(--terra-cotta); }
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            .carousel-track { animation: none; }
+            .carousel-container { overflow-x: auto; }
+            .reveal { opacity: 1; transform: none; transition: none; }
+        }
         .carousel-track.tablet-track { animation-duration: 50s; }
 
         @keyframes carousel-scroll {
@@ -860,7 +901,7 @@
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.08em;
-            color: var(--terra-cotta);
+            color: var(--terra-text);
             margin-bottom: 0.75rem;
         }
         .case-card h3 {
@@ -878,7 +919,7 @@
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.06em;
-            color: var(--mid-gray-decorative);
+            color: var(--mid-gray);
             margin: 1.1rem 0 0.35rem;
         }
         .case-card p {
@@ -991,7 +1032,7 @@
             border-color: transparent;
             border-top: 3px solid var(--terra-cotta);
         }
-        .stat-card.featured .number { color: var(--terra-cotta); }
+        .stat-card.featured .number { color: var(--terra-text); }
         .stat-card.featured .label { color: var(--mid-gray-decorative); }
 
         .stat-card .number {
@@ -1041,7 +1082,7 @@
             font-family: 'Inter', sans-serif;
             font-size: 0.65rem;
             font-weight: 600;
-            color: var(--mid-gray-decorative);
+            color: var(--mid-gray);
             background: var(--warm-cream);
             padding: 0.2rem 0.5rem;
             border-radius: 4px;
@@ -1110,7 +1151,7 @@
             font-family: 'Inter', sans-serif;
             font-size: 0.72rem;
             font-weight: 600;
-            color: var(--terra-cotta);
+            color: var(--terra-text);
             background: rgba(217, 119, 87, 0.08);
             padding: 0.2rem 0.5rem;
             border-radius: 4px;
@@ -1126,13 +1167,13 @@
         }
 
         .pub-content .author-me {
-            color: var(--terra-cotta);
+            color: var(--terra-text);
             font-weight: 600;
         }
 
         .pub-content .journal {
             font-style: italic;
-            color: var(--terra-cotta);
+            color: var(--terra-text);
             font-weight: 500;
         }
 
@@ -1140,12 +1181,12 @@
             font-family: 'Inter', sans-serif;
             font-size: 0.72rem;
             font-weight: 500;
-            color: var(--blue);
+            color: var(--blue-text);
             text-decoration: none;
             margin-left: 0.25rem;
             transition: color 0.2s;
         }
-        .pub-link:hover { color: var(--terra-cotta); }
+        .pub-link:hover { color: var(--terra-text); }
 
         .pub-item.pub-hidden { display: none; }
 
@@ -1155,7 +1196,7 @@
             font-family: 'Inter', sans-serif;
             font-size: 0.85rem;
             font-weight: 500;
-            color: var(--terra-cotta);
+            color: var(--terra-text);
             background: rgba(217, 119, 87, 0.06);
             border: 1.5px solid rgba(217, 119, 87, 0.2);
             padding: 0.6rem 1.5rem;
@@ -1185,7 +1226,7 @@
             line-height: 1.8;
             margin-bottom: 0.75rem;
         }
-        .contact-message .highlight { color: var(--terra-cotta); font-weight: 500; }
+        .contact-message .highlight { color: var(--terra-text); font-weight: 500; }
 
         .contact-channels {
             display: flex;
@@ -1252,7 +1293,7 @@
             transition: color 0.3s var(--ease-out-expo);
             display: flex;
         }
-        .footer-social a:hover { color: var(--terra-cotta); }
+        .footer-social a:hover { color: var(--terra-text); }
         .footer-social svg { width: 20px; height: 20px; fill: currentColor; }
 
         footer p {
@@ -1398,13 +1439,13 @@
 </head>
 <body>
 
-<a href="#about" class="skip-link">Skip to content</a>
+<a href="#main" class="skip-link">Skip to content</a>
 
 <!-- Navigation -->
 <nav>
     <a href="#" class="logo">Dr. Ismail <span>Mbabali</span></a>
     <div class="nav-links">
-        <ul>
+        <ul id="nav-menu">
             <li><a href="#about" data-section="about">My Story</a></li>
             <li><a href="#projects" data-section="projects">Projects</a></li>
             <li><a href="#data-work" data-section="data-work">Data Work</a></li>
@@ -1423,22 +1464,25 @@
             </li>
         </ul>
     </div>
-    <button class="hamburger" aria-label="Toggle menu">
+    <button class="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-menu">
         <span></span><span></span><span></span>
     </button>
 </nav>
 
+<main id="main">
+
 <!-- Hero -->
 <section class="hero">
     <div class="hero-content">
-        <img src="images/profile.jpg" alt="Dr. Ismail Mbabali" class="hero-photo" width="160" height="160">
-        <div class="hero-label">Physician &bull; Public Health Leader &bull; Tech Builder</div>
+        <img src="images/profile.jpg" alt="Dr. Ismail Mbabali" class="hero-photo" width="160" height="160" fetchpriority="high">
+        <div class="hero-label">Physician &bull; Epidemiologist &bull; Health-Data &amp; Software Builder</div>
         <h1>I'm a doctor who <span>builds apps.</span></h1>
         <div class="accent-bar accent-bar-center"></div>
-        <p>No software engineering degree. No coding bootcamp. Just Claude Code and a problem to solve. I'm Dr. Ismail Mbabali — a physician and Johns Hopkins-trained public health leader building mobile apps, websites, and tools from Kampala, Uganda.</p>
-        <p class="subtitle"><span data-live-count>10</span> projects shipped. Zero lines of code written before 2024.</p>
+        <p>I'm Dr. Ismail Mbabali, a Kampala-based physician with a Johns Hopkins MPH in epidemiology and biostatistics. I have spent 12+ years leading HIV, TB and child-health programmes, monitoring and evaluation, and national health data systems in Uganda. With Claude Code I now also ship the software: mobile apps, operations platforms and websites for real clients.</p>
+        <p class="subtitle"><span data-live-count>10</span> live projects. Built without a software engineering degree.</p>
         <div class="hero-cta">
             <a href="#projects" class="btn btn-primary">See My Work <span class="arrow">&rarr;</span></a>
+            <a href="#data-work" class="btn btn-outline">Health Data Work</a>
             <a href="#contact" class="btn btn-outline">Get in Touch</a>
         </div>
     </div>
@@ -1452,7 +1496,7 @@
 <div class="section-cream" id="about">
     <div class="container">
         <div class="section-label">My Story</div>
-        <div class="section-title">How I went from physician to tech builder.</div>
+        <h2 class="section-title">How I went from physician to tech builder.</h2>
         <div class="accent-bar accent-bar-center"></div>
 
         <div class="story-timeline">
@@ -1461,7 +1505,7 @@
                 <span class="timeline-icon">&#9877;</span>
                 <div class="timeline-phase-label orange">The Foundation</div>
                 <h3>12+ years building health systems across Uganda</h3>
-                <p>Medical degree from Makerere. MPH from Johns Hopkins. A decade leading USAID and PEPFAR programs across 112 districts, managing $39M portfolios and training 500+ professionals.</p>
+                <p>Medical degree from Makerere. MPH from Johns Hopkins. A decade leading USAID and PEPFAR programs across 112 districts, managing $39M portfolios and training 500+ professionals. Along the way I built the data systems those programmes ran on: an Access database that became Uganda's national DREAMS and OVC Tracking System, a smartphone data-collection app and real-time dashboard for two mHealth studies, and a redesigned national OVC information system that raised data completeness from 65% to 92%.</p>
             </div>
             <div class="timeline-phase reveal reveal-delay-1">
                 <div class="timeline-dot blue"></div>
@@ -1485,26 +1529,26 @@
 <div class="section-dark" id="projects">
     <div class="container">
         <div class="section-label">Projects</div>
-        <div class="section-title">Real applications, real users, real impact.</div>
+        <h2 class="section-title">Real applications, real users, real impact.</h2>
         <div class="accent-bar accent-bar-center"></div>
         <p class="section-intro" style="color: var(--mid-gray);">Every project below was built with Claude Code — by a physician with no formal software engineering training.</p>
 
         <div class="filter-tabs">
-            <button class="filter-tab active" data-filter="all">All</button>
-            <button class="filter-tab" data-filter="platform">Platforms</button>
-            <button class="filter-tab" data-filter="mobile">Mobile Apps</button>
-            <button class="filter-tab" data-filter="website">Websites</button>
-            <button class="filter-tab" data-filter="community">Community Tools</button>
+            <button class="filter-tab active" data-filter="all" aria-pressed="true">All</button>
+            <button class="filter-tab" data-filter="platform" aria-pressed="false">Platforms</button>
+            <button class="filter-tab" data-filter="mobile" aria-pressed="false">Mobile Apps</button>
+            <button class="filter-tab" data-filter="website" aria-pressed="false">Websites</button>
+            <button class="filter-tab" data-filter="community" aria-pressed="false">Community Tools</button>
         </div>
 
         <div class="projects-grid">
             <div class="project-card featured reveal" data-category="mobile">
                 <div class="project-screenshot">
-                    <img src="images/phone/3-member-dashboard.png" alt="Money Hive SACCO app dashboard" width="640" height="380">
+                    <img src="images/phone/3-member-dashboard.webp" alt="Money Hive SACCO app dashboard" loading="lazy" width="640" height="1385">
                 </div>
                 <div class="project-card-body">
                     <div class="project-card-header">
-                        <div class="project-type" style="color: var(--terra-cotta);">Mobile Application</div>
+                        <div class="project-type" style="color: var(--terra-text);">Mobile Application</div>
                         <span class="project-status status-live">Live</span>
                     </div>
                     <h3>Money Hive — SACCO Management App</h3>
@@ -1529,7 +1573,7 @@
                 <div class="project-screenshot"><img src="images/projects/bin-better/home.webp" alt="Bin Better homepage" loading="lazy" width="800" height="500"></div>
                 <div class="project-card-body">
                     <div class="project-card-header">
-                        <div class="project-type" style="color: var(--green);">Operations Platform</div>
+                        <div class="project-type" style="color: var(--green-text);">Operations Platform</div>
                         <span class="project-status status-live">Live</span>
                     </div>
                     <h3>Bin Better</h3>
@@ -1551,7 +1595,7 @@
                 <div class="project-screenshot"><img src="images/projects/iges/home.webp" alt="IGES Waste Services homepage" loading="lazy" width="800" height="500"></div>
                 <div class="project-card-body">
                     <div class="project-card-header">
-                        <div class="project-type" style="color: var(--terra-cotta);">Operations Platform</div>
+                        <div class="project-type" style="color: var(--terra-text);">Operations Platform</div>
                         <span class="project-status status-live">Live</span>
                     </div>
                     <h3>IGES Waste Services</h3>
@@ -1573,7 +1617,7 @@
                 <div class="project-screenshot"><img src="images/projects/buyonjo/home.webp" alt="Buyonjo payment screen" loading="lazy" width="330" height="714" style="object-position: top;"></div>
                 <div class="project-card-body">
                     <div class="project-card-header">
-                        <div class="project-type" style="color: var(--blue);">Mobile Payments App</div>
+                        <div class="project-type" style="color: var(--blue-text);">Mobile Payments App</div>
                         <span class="project-status status-beta">Beta</span>
                     </div>
                     <h3>Buyonjo</h3>
@@ -1596,7 +1640,7 @@
                 <div class="project-screenshot"><img src="images/projects/trace-core/home.webp" alt="Trace Core Africa homepage" loading="lazy" width="800" height="500"></div>
                 <div class="project-card-body">
                     <div class="project-card-header">
-                        <div class="project-type" style="color: var(--blue);">Website</div>
+                        <div class="project-type" style="color: var(--blue-text);">Website</div>
                         <span class="project-status status-live">Live</span>
                     </div>
                     <h3>Trace Core Africa</h3>
@@ -1618,7 +1662,7 @@
                 <div class="project-screenshot"><img src="images/projects/modern-charm-invites/overview-1.webp" alt="Modern Charm personalised e-invites overview" loading="lazy" width="800" height="500"></div>
                 <div class="project-card-body">
                     <div class="project-card-header">
-                        <div class="project-type" style="color: var(--terra-cotta);">Web Product</div>
+                        <div class="project-type" style="color: var(--terra-text);">Web Product</div>
                         <span class="project-status status-live">Live</span>
                     </div>
                     <h3>Modern Charm Personalised E-Invites</h3>
@@ -1636,10 +1680,10 @@
             </div>
 
             <div class="project-card reveal" data-category="mobile">
-                <div class="project-screenshot"><span class="placeholder-initials">NMS</span></div>
+                <div class="project-screenshot"><span class="placeholder-initials" aria-hidden="true">NMS</span></div>
                 <div class="project-card-body">
                     <div class="project-card-header">
-                        <div class="project-type" style="color: var(--blue);">Mobile Application</div>
+                        <div class="project-type" style="color: var(--blue-text);">Mobile Application</div>
                         <span class="project-status status-dev">In Dev</span>
                     </div>
                     <h3>NMS Waste Management</h3>
@@ -1654,11 +1698,11 @@
 
             <div class="project-card reveal" data-category="mobile">
                 <div class="project-screenshot">
-                    <img src="images/awwf/ios_01.png" alt="A Widow's Way Forward app home screen" width="640" height="380">
+                    <img src="images/awwf/ios_01.webp" alt="A Widow's Way Forward app home screen" loading="lazy" width="640" height="1385">
                 </div>
                 <div class="project-card-body">
                     <div class="project-card-header">
-                        <div class="project-type" style="color: var(--terra-cotta);">Mobile Application</div>
+                        <div class="project-type" style="color: var(--terra-text);">Mobile Application</div>
                         <span class="project-status status-dev">In Dev</span>
                     </div>
                     <h3>A Widow's Way Forward</h3>
@@ -1676,10 +1720,10 @@
             </div>
 
             <div class="project-card reveal" data-category="website">
-                <div class="project-screenshot"><img src="images/projects/modern-charm/home.png" alt="Modern Charm Uganda homepage" loading="lazy" width="800" height="450"></div>
+                <div class="project-screenshot"><img src="images/projects/modern-charm/home.webp" alt="Modern Charm Uganda homepage" loading="lazy" width="800" height="444"></div>
                 <div class="project-card-body">
                     <div class="project-card-header">
-                        <div class="project-type" style="color: var(--terra-cotta);">Website</div>
+                        <div class="project-type" style="color: var(--terra-text);">Website</div>
                         <span class="project-status status-live">Live</span>
                     </div>
                     <h3>Modern Charm Uganda</h3>
@@ -1697,10 +1741,10 @@
             </div>
 
             <div class="project-card reveal" data-category="website">
-                <div class="project-screenshot"><img src="images/projects/ruhita/home.png" alt="Ruhita Finance homepage" loading="lazy" width="800" height="450"></div>
+                <div class="project-screenshot"><img src="images/projects/ruhita/home.webp" alt="Ruhita Finance homepage" loading="lazy" width="800" height="442"></div>
                 <div class="project-card-body">
                     <div class="project-card-header">
-                        <div class="project-type" style="color: var(--blue);">Website</div>
+                        <div class="project-type" style="color: var(--blue-text);">Website</div>
                         <span class="project-status status-live">Live</span>
                     </div>
                     <h3>Ruhita Finance</h3>
@@ -1718,10 +1762,10 @@
             </div>
 
             <div class="project-card reveal" data-category="website">
-                <div class="project-screenshot"><img src="images/projects/aipdn/home.png" alt="AIPDN homepage" loading="lazy" width="800" height="450"></div>
+                <div class="project-screenshot"><img src="images/projects/aipdn/home.webp" alt="AIPDN homepage" loading="lazy" width="800" height="442"></div>
                 <div class="project-card-body">
                     <div class="project-card-header">
-                        <div class="project-type" style="color: var(--green);">Website</div>
+                        <div class="project-type" style="color: var(--green-text);">Website</div>
                         <span class="project-status status-live">Live</span>
                     </div>
                     <h3>AIPDN — African Inter-Party Dialogue Network</h3>
@@ -1740,10 +1784,10 @@
             </div>
 
             <div class="project-card reveal" data-category="community">
-                <div class="project-screenshot"><span class="placeholder-initials">K05</span></div>
+                <div class="project-screenshot"><span class="placeholder-initials" aria-hidden="true">K05</span></div>
                 <div class="project-card-body">
                     <div class="project-card-header">
-                        <div class="project-type" style="color: var(--green);">Community Tool</div>
+                        <div class="project-type" style="color: var(--green-text);">Community Tool</div>
                         <span class="project-status status-live">Live</span>
                     </div>
                     <h3>KOSA05 Class Directory</h3>
@@ -1757,10 +1801,10 @@
             </div>
 
             <div class="project-card reveal" data-category="community">
-                <div class="project-screenshot"><span class="placeholder-initials">M06</span></div>
+                <div class="project-screenshot"><span class="placeholder-initials" aria-hidden="true">M06</span></div>
                 <div class="project-card-body">
                     <div class="project-card-header">
-                        <div class="project-type" style="color: var(--terra-cotta);">Community Tool</div>
+                        <div class="project-type" style="color: var(--terra-text);">Community Tool</div>
                         <span class="project-status status-live">Live</span>
                     </div>
                     <h3>MUCHS-06 Class Directory</h3>
@@ -1781,40 +1825,40 @@
                 <span class="badge">Featured Project</span>
             </div>
             <p class="app-showcase-desc">
-                A bookkeeping and record-keeping app for SACCOs, Chamas, and savings groups. Contribution tracking, loan ledger, fine management, member dashboards, admin tools, multi-group support, profit distribution, and PDF reports. Built for East Africa with support for UGX, KES, TZS, RWF, NGN, and GHS. <strong>Built from scratch by a physician with zero software engineering training</strong>, using Claude Code. Available on the <a href="https://apps.apple.com/ug/app/money-hive/id6758545614" target="_blank" style="color: var(--terra-cotta);">App Store</a> and <a href="https://play.google.com/store/apps/details?id=app.moneyhive.sacco" target="_blank" style="color: var(--terra-cotta);">Google Play</a>.
+                A bookkeeping and record-keeping app for SACCOs, Chamas, and savings groups. Contribution tracking, loan ledger, fine management, member dashboards, admin tools, multi-group support, profit distribution, and PDF reports. Built for East Africa with support for UGX, KES, TZS, RWF, NGN, and GHS. <strong>Built from scratch by a physician with zero software engineering training</strong>, using Claude Code. Available on the <a href="https://apps.apple.com/ug/app/money-hive/id6758545614" target="_blank" style="color: var(--terra-text);">App Store</a> and <a href="https://play.google.com/store/apps/details?id=app.moneyhive.sacco" target="_blank" style="color: var(--terra-text);">Google Play</a>.
             </p>
 
-            <div class="screenshots-section-label" style="color: var(--terra-cotta);">Mobile App Screenshots</div>
+            <div class="screenshots-section-label" style="color: var(--terra-text);">Mobile App Screenshots</div>
             <div class="scroll-hint">Hover to pause</div>
             <div class="carousel-container">
                 <div class="carousel-track">
-                    <div class="phone-screenshot"><img src="images/phone/1-create-group.png" alt="Create savings group" loading="lazy" width="220" height="476"><div class="screenshot-label">Create Group</div></div>
-                    <div class="phone-screenshot"><img src="images/phone/2-invite-members.png" alt="Invite members" loading="lazy" width="220" height="476"><div class="screenshot-label">Invite Members</div></div>
-                    <div class="phone-screenshot"><img src="images/phone/3-member-dashboard.png" alt="Member dashboard" loading="lazy" width="220" height="476"><div class="screenshot-label">Member Dashboard</div></div>
-                    <div class="phone-screenshot"><img src="images/phone/4-member-loans.png" alt="Member loans" loading="lazy" width="220" height="476"><div class="screenshot-label">Loans</div></div>
-                    <div class="phone-screenshot"><img src="images/phone/5-member-fines.png" alt="Member fines" loading="lazy" width="220" height="476"><div class="screenshot-label">Fines</div></div>
-                    <div class="phone-screenshot"><img src="images/phone/6-member-expenses.png" alt="Member expenses" loading="lazy" width="220" height="476"><div class="screenshot-label">Expenses</div></div>
-                    <div class="phone-screenshot"><img src="images/phone/7-admin-dashboard.png" alt="Admin dashboard" loading="lazy" width="220" height="476"><div class="screenshot-label">Admin Dashboard</div></div>
-                    <div class="phone-screenshot"><img src="images/phone/8-admin-members.png" alt="Admin member management" loading="lazy" width="220" height="476"><div class="screenshot-label">Admin Members</div></div>
-                    <div class="phone-screenshot"><img src="images/phone/9-admin-reports.png" alt="Reports and analytics" loading="lazy" width="220" height="476"><div class="screenshot-label">Reports & Analytics</div></div>
-                    <div class="phone-screenshot"><img src="images/phone/10-admin-contributions.png" alt="Admin contributions" loading="lazy" width="220" height="476"><div class="screenshot-label">Contributions</div></div>
+                    <div class="phone-screenshot"><img src="images/phone/1-create-group.webp" alt="Create savings group" loading="lazy" width="220" height="476"><div class="screenshot-label">Create Group</div></div>
+                    <div class="phone-screenshot"><img src="images/phone/2-invite-members.webp" alt="Invite members" loading="lazy" width="220" height="476"><div class="screenshot-label">Invite Members</div></div>
+                    <div class="phone-screenshot"><img src="images/phone/3-member-dashboard.webp" alt="Member dashboard" loading="lazy" width="220" height="476"><div class="screenshot-label">Member Dashboard</div></div>
+                    <div class="phone-screenshot"><img src="images/phone/4-member-loans.webp" alt="Member loans" loading="lazy" width="220" height="476"><div class="screenshot-label">Loans</div></div>
+                    <div class="phone-screenshot"><img src="images/phone/5-member-fines.webp" alt="Member fines" loading="lazy" width="220" height="476"><div class="screenshot-label">Fines</div></div>
+                    <div class="phone-screenshot"><img src="images/phone/6-member-expenses.webp" alt="Member expenses" loading="lazy" width="220" height="476"><div class="screenshot-label">Expenses</div></div>
+                    <div class="phone-screenshot"><img src="images/phone/7-admin-dashboard.webp" alt="Admin dashboard" loading="lazy" width="220" height="476"><div class="screenshot-label">Admin Dashboard</div></div>
+                    <div class="phone-screenshot"><img src="images/phone/8-admin-members.webp" alt="Admin member management" loading="lazy" width="220" height="476"><div class="screenshot-label">Admin Members</div></div>
+                    <div class="phone-screenshot"><img src="images/phone/9-admin-reports.webp" alt="Reports and analytics" loading="lazy" width="220" height="476"><div class="screenshot-label">Reports & Analytics</div></div>
+                    <div class="phone-screenshot"><img src="images/phone/10-admin-contributions.webp" alt="Admin contributions" loading="lazy" width="220" height="476"><div class="screenshot-label">Contributions</div></div>
                 </div>
             </div>
 
-            <div class="screenshots-section-label" style="color: var(--blue);">Tablet Views</div>
+            <div class="screenshots-section-label" style="color: var(--blue-text);">Tablet Views</div>
             <div class="scroll-hint">Hover to pause</div>
             <div class="carousel-container">
                 <div class="carousel-track tablet-track">
-                    <div class="tablet-screenshot"><img src="images/tablet/create-sacco-group.png" alt="Create SACCO group - tablet" loading="lazy" width="380" height="285"><div class="screenshot-label">Create SACCO Group</div></div>
-                    <div class="tablet-screenshot"><img src="images/tablet/member-dashboard.png" alt="Member dashboard - tablet" loading="lazy" width="380" height="285"><div class="screenshot-label">Member Dashboard</div></div>
-                    <div class="tablet-screenshot"><img src="images/tablet/member-loans.png" alt="Member loans - tablet" loading="lazy" width="380" height="285"><div class="screenshot-label">Member Loans</div></div>
-                    <div class="tablet-screenshot"><img src="images/tablet/member-fines.png" alt="Member fines - tablet" loading="lazy" width="380" height="285"><div class="screenshot-label">Member Fines</div></div>
-                    <div class="tablet-screenshot"><img src="images/tablet/member-expenses.png" alt="Member expenses - tablet" loading="lazy" width="380" height="285"><div class="screenshot-label">Member Expenses</div></div>
-                    <div class="tablet-screenshot"><img src="images/tablet/admin-functions.png" alt="Admin functions - tablet" loading="lazy" width="380" height="285"><div class="screenshot-label">Admin Functions</div></div>
-                    <div class="tablet-screenshot"><img src="images/tablet/admin-member-management.png" alt="Admin member management - tablet" loading="lazy" width="380" height="285"><div class="screenshot-label">Admin Members</div></div>
-                    <div class="tablet-screenshot"><img src="images/tablet/admin-loan-management.png" alt="Admin loan management - tablet" loading="lazy" width="380" height="285"><div class="screenshot-label">Admin Loans</div></div>
-                    <div class="tablet-screenshot"><img src="images/tablet/admin-contributions-management.png" alt="Admin contributions - tablet" loading="lazy" width="380" height="285"><div class="screenshot-label">Admin Contributions</div></div>
-                    <div class="tablet-screenshot"><img src="images/tablet/admin-reports-analytics.png" alt="Admin reports - tablet" loading="lazy" width="380" height="285"><div class="screenshot-label">Reports & Analytics</div></div>
+                    <div class="tablet-screenshot"><img src="images/tablet/create-sacco-group.webp" alt="Create SACCO group - tablet" loading="lazy" width="380" height="552"><div class="screenshot-label">Create SACCO Group</div></div>
+                    <div class="tablet-screenshot"><img src="images/tablet/member-dashboard.webp" alt="Member dashboard - tablet" loading="lazy" width="380" height="552"><div class="screenshot-label">Member Dashboard</div></div>
+                    <div class="tablet-screenshot"><img src="images/tablet/member-loans.webp" alt="Member loans - tablet" loading="lazy" width="380" height="552"><div class="screenshot-label">Member Loans</div></div>
+                    <div class="tablet-screenshot"><img src="images/tablet/member-fines.webp" alt="Member fines - tablet" loading="lazy" width="380" height="552"><div class="screenshot-label">Member Fines</div></div>
+                    <div class="tablet-screenshot"><img src="images/tablet/member-expenses.webp" alt="Member expenses - tablet" loading="lazy" width="380" height="552"><div class="screenshot-label">Member Expenses</div></div>
+                    <div class="tablet-screenshot"><img src="images/tablet/admin-functions.webp" alt="Admin functions - tablet" loading="lazy" width="380" height="552"><div class="screenshot-label">Admin Functions</div></div>
+                    <div class="tablet-screenshot"><img src="images/tablet/admin-member-management.webp" alt="Admin member management - tablet" loading="lazy" width="380" height="552"><div class="screenshot-label">Admin Members</div></div>
+                    <div class="tablet-screenshot"><img src="images/tablet/admin-loan-management.webp" alt="Admin loan management - tablet" loading="lazy" width="380" height="552"><div class="screenshot-label">Admin Loans</div></div>
+                    <div class="tablet-screenshot"><img src="images/tablet/admin-contributions-management.webp" alt="Admin contributions - tablet" loading="lazy" width="380" height="552"><div class="screenshot-label">Admin Contributions</div></div>
+                    <div class="tablet-screenshot"><img src="images/tablet/admin-reports-analytics.webp" alt="Admin reports - tablet" loading="lazy" width="380" height="552"><div class="screenshot-label">Reports & Analytics</div></div>
                 </div>
             </div>
         </div>
@@ -1829,7 +1873,7 @@
                 A public website and a staff-only platform for a property waste-management company in Mbuya, Kampala. Field officers register premises with photographs and GPS and print a QR label for each one. Collections and payments are recorded against that label, and managers watch arrears on charts and a map, with every change kept in an audit trail. <strong>Built with Claude Code</strong> on Next.js 16 and Supabase, and running on real customer records.
             </p>
 
-            <div class="screenshots-section-label" style="color: var(--green);">Website Pages</div>
+            <div class="screenshots-section-label" style="color: var(--green-text);">Website Pages</div>
             <div class="scroll-hint">Hover to pause</div>
             <div class="carousel-container">
                 <div class="carousel-track web-track">
@@ -1852,7 +1896,7 @@
                 Forked from Bin Better and rebuilt for a five-parish operation in Rubaga South Division, Kampala, where two zones can share a name across parishes. Parishes became their own table, customer codes carry the parish, and residents find their zone by parish. The office's paper client register was keyed into the platform and checked row by row. <strong>Built with Claude Code</strong>.
             </p>
 
-            <div class="screenshots-section-label" style="color: var(--terra-cotta);">Website Pages</div>
+            <div class="screenshots-section-label" style="color: var(--terra-text);">Website Pages</div>
             <div class="scroll-hint">Hover to pause</div>
             <div class="carousel-container">
                 <div class="carousel-track web-track">
@@ -1875,7 +1919,7 @@
                 A bridge between waste-collection customers and the companies that serve them. A customer picks their company, types a client ID or phone number, sees what they owe and approves a mobile-money prompt with their PIN, with no account to create. Companies subscribe to be listed and connect their own MTN or Airtel merchant account, so the money settles straight to them and Buyonjo never holds customer funds. The Android and iOS apps wrap the same web app. <strong>Built with Claude Code</strong>, with payments in operator sandbox testing ahead of launch.
             </p>
 
-            <div class="screenshots-section-label" style="color: var(--blue);">Mobile Screens</div>
+            <div class="screenshots-section-label" style="color: var(--blue-text);">Mobile Screens</div>
             <div class="static-row">
                 <div class="phone-screenshot"><img src="images/projects/buyonjo/home.webp" alt="Pay for waste collection" loading="lazy" width="220" height="476"><div class="screenshot-label">Pay a Bill</div></div>
                 <div class="phone-screenshot"><img src="images/projects/buyonjo/register.webp" alt="Register a waste company" loading="lazy" width="220" height="476"><div class="screenshot-label">Company Sign-Up</div></div>
@@ -1893,7 +1937,7 @@
                 A credibility site for a company incorporated in Uganda in 2025 that supplies tax stamp security, product authentication, supply-chain traceability and security consumables to revenue authorities, ministries and security printers. The rebuild replaced a WordPress template with a statically generated site that publishes only what the company's own documents state, records a licence for every image, and keeps all content in Markdown and YAML files. <strong>Built with Claude Code</strong> on Next.js 16.
             </p>
 
-            <div class="screenshots-section-label" style="color: var(--blue);">Website Pages</div>
+            <div class="screenshots-section-label" style="color: var(--blue-text);">Website Pages</div>
             <div class="scroll-hint">Hover to pause</div>
             <div class="carousel-container">
                 <div class="carousel-track web-track">
@@ -1916,7 +1960,7 @@
                 A multi-tenant invitation product added to the Modern Charm site, with the project's first database. Each guest receives a private link, and because the guest's code sits in the link path, the WhatsApp preview shows that guest's own name and seat allowance. Guests open a sealed envelope, reply in a few taps and receive a QR entry pass. Hosts watch a live RSVP board, and door staff scan each pass on the day. Guest data sits behind row-level security and hashed tokens. <strong>Built with Claude Code</strong>.
             </p>
 
-            <div class="screenshots-section-label" style="color: var(--terra-cotta);">Product Overview</div>
+            <div class="screenshots-section-label" style="color: var(--terra-text);">Product Overview</div>
             <div class="static-row">
                 <div class="web-screenshot"><img src="images/projects/modern-charm-invites/overview-1.webp" alt="How the personalised e-invites work" loading="lazy" width="600" height="375"><div class="screenshot-label">How It Works</div></div>
                 <div class="web-screenshot"><img src="images/projects/modern-charm-invites/overview-2.webp" alt="Guest experience, RSVP board and check-in" loading="lazy" width="600" height="375"><div class="screenshot-label">Guests, Hosts &amp; Check-In</div></div>
@@ -1933,20 +1977,20 @@
                 A mobile app for a UK-based community interest company supporting widows globally. Seven pillars of support, expert session booking, healing music playlists, donation campaigns with Gift Aid, annual surveys, multi-role authentication, and internationalization in 4 languages. <strong>Built from scratch by a physician with zero software engineering training</strong>, using Claude Code.
             </p>
 
-            <div class="screenshots-section-label" style="color: var(--terra-cotta);">App Screenshots</div>
+            <div class="screenshots-section-label" style="color: var(--terra-text);">App Screenshots</div>
             <div class="scroll-hint">Hover to pause</div>
             <div class="carousel-container">
                 <div class="carousel-track">
-                    <div class="phone-screenshot"><img src="images/awwf/ios_01.png" alt="Welcome home dashboard" loading="lazy" width="220" height="476"><div class="screenshot-label">Home</div></div>
-                    <div class="phone-screenshot"><img src="images/awwf/ios_02.png" alt="Seven pillars of support" loading="lazy" width="220" height="476"><div class="screenshot-label">7 Pillars</div></div>
-                    <div class="phone-screenshot"><img src="images/awwf/ios_03.png" alt="Book expert sessions" loading="lazy" width="220" height="476"><div class="screenshot-label">Expert Sessions</div></div>
-                    <div class="phone-screenshot"><img src="images/awwf/ios_04.png" alt="Healing music player" loading="lazy" width="220" height="476"><div class="screenshot-label">Music Heals</div></div>
-                    <div class="phone-screenshot"><img src="images/awwf/ios_05.png" alt="Make a donation" loading="lazy" width="220" height="476"><div class="screenshot-label">Donate</div></div>
-                    <div class="phone-screenshot"><img src="images/awwf/ios_06.png" alt="Annual survey" loading="lazy" width="220" height="476"><div class="screenshot-label">Surveys</div></div>
-                    <div class="phone-screenshot"><img src="images/awwf/ios_07.png" alt="Book a clarity call" loading="lazy" width="220" height="476"><div class="screenshot-label">Clarity Call</div></div>
-                    <div class="phone-screenshot"><img src="images/awwf/ios_08.png" alt="Career rebirth and inner healing" loading="lazy" width="220" height="476"><div class="screenshot-label">Rebuild & Thrive</div></div>
-                    <div class="phone-screenshot"><img src="images/awwf/ios_09.png" alt="Monthly group calls" loading="lazy" width="220" height="476"><div class="screenshot-label">Community</div></div>
-                    <div class="phone-screenshot"><img src="images/awwf/ios_10.png" alt="Gift Aid and tax deductible donations" loading="lazy" width="220" height="476"><div class="screenshot-label">Gift Aid</div></div>
+                    <div class="phone-screenshot"><img src="images/awwf/ios_01.webp" alt="Welcome home dashboard" loading="lazy" width="220" height="476"><div class="screenshot-label">Home</div></div>
+                    <div class="phone-screenshot"><img src="images/awwf/ios_02.webp" alt="Seven pillars of support" loading="lazy" width="220" height="476"><div class="screenshot-label">7 Pillars</div></div>
+                    <div class="phone-screenshot"><img src="images/awwf/ios_03.webp" alt="Book expert sessions" loading="lazy" width="220" height="476"><div class="screenshot-label">Expert Sessions</div></div>
+                    <div class="phone-screenshot"><img src="images/awwf/ios_04.webp" alt="Healing music player" loading="lazy" width="220" height="476"><div class="screenshot-label">Music Heals</div></div>
+                    <div class="phone-screenshot"><img src="images/awwf/ios_05.webp" alt="Make a donation" loading="lazy" width="220" height="476"><div class="screenshot-label">Donate</div></div>
+                    <div class="phone-screenshot"><img src="images/awwf/ios_06.webp" alt="Annual survey" loading="lazy" width="220" height="476"><div class="screenshot-label">Surveys</div></div>
+                    <div class="phone-screenshot"><img src="images/awwf/ios_07.webp" alt="Book a clarity call" loading="lazy" width="220" height="476"><div class="screenshot-label">Clarity Call</div></div>
+                    <div class="phone-screenshot"><img src="images/awwf/ios_08.webp" alt="Career rebirth and inner healing" loading="lazy" width="220" height="476"><div class="screenshot-label">Rebuild & Thrive</div></div>
+                    <div class="phone-screenshot"><img src="images/awwf/ios_09.webp" alt="Monthly group calls" loading="lazy" width="220" height="476"><div class="screenshot-label">Community</div></div>
+                    <div class="phone-screenshot"><img src="images/awwf/ios_10.webp" alt="Gift Aid and tax deductible donations" loading="lazy" width="220" height="476"><div class="screenshot-label">Gift Aid</div></div>
                 </div>
             </div>
         </div>
@@ -1961,16 +2005,16 @@
                 A complete digital lending platform — loan applications, multi-step forms, admin dashboard, product catalog, FAQ engine, and customer management. <strong>Built with Claude Code</strong> from branding to full-stack deployment.
             </p>
 
-            <div class="screenshots-section-label" style="color: var(--blue);">Website Pages</div>
+            <div class="screenshots-section-label" style="color: var(--blue-text);">Website Pages</div>
             <div class="scroll-hint">Hover to pause</div>
             <div class="carousel-container">
                 <div class="carousel-track web-track">
-                    <div class="web-screenshot"><img src="images/projects/ruhita/home.png" alt="Ruhita Finance homepage" loading="lazy" width="600" height="375"><div class="screenshot-label">Homepage</div></div>
-                    <div class="web-screenshot"><img src="images/projects/ruhita/about.png" alt="About Ruhita Finance" loading="lazy" width="600" height="375"><div class="screenshot-label">About Us</div></div>
-                    <div class="web-screenshot"><img src="images/projects/ruhita/products.png" alt="Loan products" loading="lazy" width="600" height="375"><div class="screenshot-label">Loan Products</div></div>
-                    <div class="web-screenshot"><img src="images/projects/ruhita/faqs.png" alt="Frequently asked questions" loading="lazy" width="600" height="375"><div class="screenshot-label">FAQs</div></div>
-                    <div class="web-screenshot"><img src="images/projects/ruhita/apply.png" alt="Loan application form" loading="lazy" width="600" height="375"><div class="screenshot-label">Loan Application</div></div>
-                    <div class="web-screenshot"><img src="images/projects/ruhita/dashboard.png" alt="Admin dashboard" loading="lazy" width="600" height="375"><div class="screenshot-label">Admin Dashboard</div></div>
+                    <div class="web-screenshot"><img src="images/projects/ruhita/home.webp" alt="Ruhita Finance homepage" loading="lazy" width="600" height="332"><div class="screenshot-label">Homepage</div></div>
+                    <div class="web-screenshot"><img src="images/projects/ruhita/about.webp" alt="About Ruhita Finance" loading="lazy" width="600" height="332"><div class="screenshot-label">About Us</div></div>
+                    <div class="web-screenshot"><img src="images/projects/ruhita/products.webp" alt="Loan products" loading="lazy" width="600" height="333"><div class="screenshot-label">Loan Products</div></div>
+                    <div class="web-screenshot"><img src="images/projects/ruhita/faqs.webp" alt="Frequently asked questions" loading="lazy" width="600" height="331"><div class="screenshot-label">FAQs</div></div>
+                    <div class="web-screenshot"><img src="images/projects/ruhita/apply.webp" alt="Loan application form" loading="lazy" width="600" height="330"><div class="screenshot-label">Loan Application</div></div>
+                    <div class="web-screenshot"><img src="images/projects/ruhita/dashboard.webp" alt="Admin dashboard" loading="lazy" width="600" height="329"><div class="screenshot-label">Admin Dashboard</div></div>
                 </div>
             </div>
         </div>
@@ -1985,14 +2029,14 @@
                 A full-stack website for a pan-African peacebuilding organization. News articles, event listings, 78-photo gallery with lightbox, partner directories, publications library, team profiles, M-Pesa donation flow, and three Supabase-powered forms. Replaces a legacy WordPress site. <strong>Built with Claude Code</strong> on Next.js 16.
             </p>
 
-            <div class="screenshots-section-label" style="color: var(--green);">Website Pages</div>
+            <div class="screenshots-section-label" style="color: var(--green-text);">Website Pages</div>
             <div class="scroll-hint">Hover to pause</div>
             <div class="carousel-container">
                 <div class="carousel-track web-track">
-                    <div class="web-screenshot"><img src="images/projects/aipdn/home.png" alt="AIPDN homepage" loading="lazy" width="600" height="375"><div class="screenshot-label">Homepage</div></div>
-                    <div class="web-screenshot"><img src="images/projects/aipdn/team.png" alt="AIPDN team" loading="lazy" width="600" height="375"><div class="screenshot-label">Our Team</div></div>
-                    <div class="web-screenshot"><img src="images/projects/aipdn/publications.png" alt="AIPDN publications" loading="lazy" width="600" height="375"><div class="screenshot-label">Publications</div></div>
-                    <div class="web-screenshot"><img src="images/projects/aipdn/events.png" alt="AIPDN events" loading="lazy" width="600" height="375"><div class="screenshot-label">Events</div></div>
+                    <div class="web-screenshot"><img src="images/projects/aipdn/home.webp" alt="AIPDN homepage" loading="lazy" width="600" height="332"><div class="screenshot-label">Homepage</div></div>
+                    <div class="web-screenshot"><img src="images/projects/aipdn/team.webp" alt="AIPDN team" loading="lazy" width="600" height="333"><div class="screenshot-label">Our Team</div></div>
+                    <div class="web-screenshot"><img src="images/projects/aipdn/publications.webp" alt="AIPDN publications" loading="lazy" width="600" height="332"><div class="screenshot-label">Publications</div></div>
+                    <div class="web-screenshot"><img src="images/projects/aipdn/events.webp" alt="AIPDN events" loading="lazy" width="600" height="332"><div class="screenshot-label">Events</div></div>
                 </div>
             </div>
         </div>
@@ -2007,16 +2051,16 @@
                 A premium event management website — portfolio galleries, service showcases, blog, testimonials, contact booking, and WhatsApp integration. <strong>Built with Claude Code</strong> for a Ugandan event styling company.
             </p>
 
-            <div class="screenshots-section-label" style="color: var(--green);">Website Pages</div>
+            <div class="screenshots-section-label" style="color: var(--green-text);">Website Pages</div>
             <div class="scroll-hint">Hover to pause</div>
             <div class="carousel-container">
                 <div class="carousel-track web-track">
-                    <div class="web-screenshot"><img src="images/projects/modern-charm/home.png" alt="Modern Charm homepage" loading="lazy" width="600" height="375"><div class="screenshot-label">Homepage</div></div>
-                    <div class="web-screenshot"><img src="images/projects/modern-charm/about.png" alt="About Modern Charm" loading="lazy" width="600" height="375"><div class="screenshot-label">About Us</div></div>
-                    <div class="web-screenshot"><img src="images/projects/modern-charm/services.png" alt="Services page" loading="lazy" width="600" height="375"><div class="screenshot-label">Our Services</div></div>
-                    <div class="web-screenshot"><img src="images/projects/modern-charm/portfolio.png" alt="Event portfolio" loading="lazy" width="600" height="375"><div class="screenshot-label">Portfolio & Work</div></div>
-                    <div class="web-screenshot"><img src="images/projects/modern-charm/testimonials.png" alt="Client testimonials" loading="lazy" width="600" height="375"><div class="screenshot-label">Client Stories</div></div>
-                    <div class="web-screenshot"><img src="images/projects/modern-charm/blog.png" alt="Blog articles" loading="lazy" width="600" height="375"><div class="screenshot-label">Blog</div></div>
+                    <div class="web-screenshot"><img src="images/projects/modern-charm/home.webp" alt="Modern Charm homepage" loading="lazy" width="600" height="333"><div class="screenshot-label">Homepage</div></div>
+                    <div class="web-screenshot"><img src="images/projects/modern-charm/about.webp" alt="About Modern Charm" loading="lazy" width="600" height="332"><div class="screenshot-label">About Us</div></div>
+                    <div class="web-screenshot"><img src="images/projects/modern-charm/services.webp" alt="Services page" loading="lazy" width="600" height="331"><div class="screenshot-label">Our Services</div></div>
+                    <div class="web-screenshot"><img src="images/projects/modern-charm/portfolio.webp" alt="Event portfolio" loading="lazy" width="600" height="333"><div class="screenshot-label">Portfolio & Work</div></div>
+                    <div class="web-screenshot"><img src="images/projects/modern-charm/testimonials.webp" alt="Client testimonials" loading="lazy" width="600" height="332"><div class="screenshot-label">Client Stories</div></div>
+                    <div class="web-screenshot"><img src="images/projects/modern-charm/blog.webp" alt="Blog articles" loading="lazy" width="600" height="332"><div class="screenshot-label">Blog</div></div>
                 </div>
             </div>
         </div>
@@ -2056,9 +2100,9 @@
 <!-- Health Data Work -->
 <section id="data-work">
     <div class="section-label">Health Data Work</div>
-    <div class="section-title">The engines behind the numbers.</div>
+    <h2 class="section-title">The engines behind the numbers.</h2>
     <div class="accent-bar accent-bar-center"></div>
-    <p class="section-intro">Two recent examples of the data systems I build in public health practice. They are anonymised: the client data stays with the client, and what follows describes the method.</p>
+    <p class="section-intro">Three recent examples of the data systems I build in public health practice. They are anonymised: the client data stays with the client, and what follows describes the method.</p>
 
     <div class="case-grid">
         <div class="case-card reveal">
@@ -2074,7 +2118,7 @@
                 <li>Reported-versus-verified tables for 26 payment-linked indicators</li>
                 <li>Dashboard, charts and the quarterly verification report</li>
             </ol>
-            <p>The verification ran again over a second quarter with a new indicator, adding hospital-level integrity audits that caught data errors before results reached the client.</p>
+            <p>The verification ran again over a second quarter with a new indicator, adding hospital-level integrity audits that caught data errors before results reached the client. I co-authored the quarterly report, which the client adopted as the deliverable of record.</p>
             <div class="tech-tags">
                 <span class="tech-tag">Qualtrics</span>
                 <span class="tech-tag">DHIS2</span>
@@ -2085,6 +2129,29 @@
         </div>
 
         <div class="case-card reveal reveal-delay-1">
+            <div class="case-meta">Fiduciary risk assessment &middot; PwC Uganda &middot; 2026</div>
+            <h3>Testing whether government health entities are ready for direct funding</h3>
+            <p>A move to government-to-government financing depends on whether ministries, medical stores, hospitals and district governments can receive funds on-budget and prove the milestones that release payment. As Monitoring and Evaluation Expert on the assessment, I owned daily data quality assurance across the national field deployment.</p>
+            <h4>What I built</h4>
+            <p>Assessment tools tailored to each kind of entity, informed by recurring weaknesses mined from prior audits, and a test of whether each entity's data and reporting systems could track and prove payment milestones.</p>
+            <ol class="pipeline">
+                <li>Prior audits mined for recurring weaknesses</li>
+                <li>Tools tailored to the ministry, national medical stores, hospitals and district governments</li>
+                <li>Every field team's evidence checked against source documents in real time</li>
+                <li>Data systems tested for milestone tracking: DHIS2, iHRIS, HCMS, eLMIS</li>
+                <li>Risks and strengths rated on the national risk matrix</li>
+            </ol>
+            <p>The findings went to a Kampala stakeholder workshop, where the funder and the government agreed the mitigation priorities to fix before funds flow.</p>
+            <div class="tech-tags">
+                <span class="tech-tag">Risk Assessment</span>
+                <span class="tech-tag">Data Quality Assurance</span>
+                <span class="tech-tag">DHIS2</span>
+                <span class="tech-tag">iHRIS</span>
+                <span class="tech-tag">eLMIS</span>
+            </div>
+        </div>
+
+        <div class="case-card reveal reveal-delay-2">
             <div class="case-meta">Baseline assessment &middot; Uganda &middot; 2026</div>
             <h3>A reproducible baseline pipeline for HIV prevention among adolescent girls and young women</h3>
             <p>A national HIV-prevention plan for adolescent girls and young women needed a baseline in two districts. Each district was to be described on its own, with health facilities shown by level and schools by primary, secondary and tertiary.</p>
@@ -2114,7 +2181,7 @@
 <div class="section-cream" id="experience">
     <div class="container">
         <div class="section-label">Experience</div>
-        <div class="section-title">12+ years building systems across Uganda's health sector.</div>
+        <h2 class="section-title">12+ years building systems across Uganda's health sector.</h2>
         <div class="accent-bar accent-bar-center"></div>
         <p class="section-intro">From clinical medicine to national-scale program management — my career has been about designing systems that work for real people. That same approach drives everything I build in tech.</p>
 
@@ -2177,7 +2244,7 @@
 <!-- Publications -->
 <section id="publications">
     <div class="section-label">Research</div>
-    <div class="section-title">10 peer-reviewed publications.</div>
+    <h2 class="section-title">10 peer-reviewed publications.</h2>
     <div class="accent-bar accent-bar-center"></div>
 
     <div class="pub-list">
@@ -2229,7 +2296,7 @@
 <div class="section-dark" id="contact">
     <div class="container">
         <div class="section-label">Contact</div>
-        <div class="section-title">Let's build something together.</div>
+        <h2 class="section-title">Let's build something together.</h2>
         <div class="accent-bar accent-bar-center"></div>
 
         <div class="contact-content reveal">
@@ -2245,7 +2312,7 @@
                 </div>
                 <div class="contact-item">
                     <div class="icon"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></div>
-                    <span>+256 (0) 777 818 070</span>
+                    <a href="tel:+256777818070">+256 (0) 777 818 070</a>
                 </div>
                 <div class="contact-item">
                     <div class="icon"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></div>
@@ -2263,6 +2330,8 @@
         </div>
     </div>
 </div>
+
+</main>
 
 <!-- Footer -->
 <footer>
@@ -2334,12 +2403,14 @@
     hamburger.addEventListener('click', () => {
         hamburger.classList.toggle('active');
         navMenu.classList.toggle('open');
+        hamburger.setAttribute('aria-expanded', navMenu.classList.contains('open'));
         document.body.style.overflow = navMenu.classList.contains('open') ? 'hidden' : '';
     });
     navMenu.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
             hamburger.classList.remove('active');
             navMenu.classList.remove('open');
+            hamburger.setAttribute('aria-expanded', 'false');
             document.body.style.overflow = '';
         });
     });
@@ -2354,13 +2425,35 @@
         });
     });
 
+    // Carousel pause control (WCAG 2.2.2): a button replaces each hover hint.
+    // Under reduced motion the tracks start paused and scroll by hand.
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    document.querySelectorAll('.scroll-hint').forEach(hint => {
+        const container = hint.nextElementSibling;
+        const track = container && container.querySelector('.carousel-track');
+        if (!track) return;
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'carousel-toggle';
+        const set = paused => {
+            track.classList.toggle('paused', paused);
+            btn.textContent = paused ? 'Play' : 'Pause';
+            btn.setAttribute('aria-pressed', String(paused));
+            btn.setAttribute('aria-label', (paused ? 'Play' : 'Pause') + ' scrolling screenshots');
+        };
+        set(reduceMotion);
+        btn.addEventListener('click', () => set(!track.classList.contains('paused')));
+        hint.replaceWith(btn);
+    });
+
     // Filter tabs
     const filterTabs = document.querySelectorAll('.filter-tab');
     const projectCards = document.querySelectorAll('.project-card');
     filterTabs.forEach(tab => {
         tab.addEventListener('click', () => {
-            filterTabs.forEach(t => t.classList.remove('active'));
+            filterTabs.forEach(t => { t.classList.remove('active'); t.setAttribute('aria-pressed', 'false'); });
             tab.classList.add('active');
+            tab.setAttribute('aria-pressed', 'true');
             const filter = tab.dataset.filter;
             projectCards.forEach(card => {
                 card.classList.toggle('hidden', filter !== 'all' && card.dataset.category !== filter);
