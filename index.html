@@ -663,6 +663,7 @@
         .status-live { background: rgba(120, 140, 93, 0.15); color: var(--green); }
         .status-dev { background: rgba(106, 155, 204, 0.15); color: var(--blue); }
         .status-deploying { background: rgba(217, 119, 87, 0.15); color: var(--terra-cotta); }
+        .status-beta { background: rgba(217, 119, 87, 0.15); color: var(--terra-cotta); }
 
         .project-card h3 {
             font-family: 'Inter', sans-serif;
@@ -824,6 +825,124 @@
         .web-screenshot:hover { transform: scale(1.03) translateY(-4px); z-index: 2; }
         .web-screenshot img { width: 100%; height: auto; display: block; }
         .carousel-track.web-track { animation-duration: 35s; }
+
+        /* Static rows for showcases with too few screens to scroll */
+        .static-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.25rem;
+            padding: 0.5rem 0 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* ── Health Data Work ── */
+        .case-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .case-card {
+            background: white;
+            border: 1px solid var(--light-gray);
+            border-radius: 16px;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+        }
+        .case-meta {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.68rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--terra-cotta);
+            margin-bottom: 0.75rem;
+        }
+        .case-card h3 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--dark);
+            letter-spacing: -0.01em;
+            line-height: 1.35;
+            margin-bottom: 1rem;
+        }
+        .case-card h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--mid-gray-decorative);
+            margin: 1.1rem 0 0.35rem;
+        }
+        .case-card p {
+            font-size: 0.9rem;
+            color: var(--mid-gray);
+            line-height: 1.65;
+        }
+        .pipeline {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            margin: 1.5rem 0 1.25rem;
+            counter-reset: step;
+        }
+        .pipeline li {
+            position: relative;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--dark-brown);
+            background: var(--warm-cream);
+            border-radius: 8px;
+            padding: 0.6rem 0.9rem 0.6rem 2.6rem;
+            margin-bottom: 1.1rem;
+            counter-increment: step;
+        }
+        .pipeline li::before {
+            content: counter(step);
+            position: absolute;
+            left: 0.7rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 1.3rem;
+            height: 1.3rem;
+            border-radius: 50%;
+            background: var(--terra-cotta);
+            color: white;
+            font-size: 0.68rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .pipeline li:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 1.3rem;
+            bottom: -1.1rem;
+            width: 1px;
+            height: 1.1rem;
+            background: var(--mid-gray-decorative);
+        }
+        .pipeline li:last-child { margin-bottom: 0; background: rgba(217, 119, 87, 0.12); }
+        .case-card .tech-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: auto; padding-top: 1.25rem; }
+        .case-card .tech-tag {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.68rem;
+            font-weight: 500;
+            padding: 0.22rem 0.55rem;
+            border-radius: 6px;
+            background: var(--warm-cream);
+            color: var(--dark-brown);
+        }
 
         .screenshots-section-label {
             font-family: 'Inter', sans-serif;
@@ -1232,6 +1351,8 @@
             .phone-screenshot { width: 170px; }
             .tablet-screenshot { width: 290px; }
             .web-screenshot { width: 400px; }
+            .static-row .web-screenshot { width: 100%; max-width: 400px; }
+            .static-row .phone-screenshot { width: 150px; }
             .carousel-track { animation-duration: 30s; }
             .carousel-track.tablet-track { animation-duration: 35s; }
             .carousel-track.web-track { animation-duration: 28s; }
@@ -1243,6 +1364,8 @@
         }
 
         @media (max-width: 480px) {
+            .case-grid { grid-template-columns: 1fr; }
+            .case-card { padding: 1.5rem; }
             .stats-bento { grid-template-columns: 1fr 1fr; gap: 0.75rem; }
             .stat-card.featured { grid-column: span 2; }
             .stat-card { padding: 1.5rem 1rem; }
@@ -1284,6 +1407,7 @@
         <ul>
             <li><a href="#about" data-section="about">My Story</a></li>
             <li><a href="#projects" data-section="projects">Projects</a></li>
+            <li><a href="#data-work" data-section="data-work">Data Work</a></li>
             <li><a href="#experience" data-section="experience">Experience</a></li>
             <li><a href="#publications" data-section="publications">Publications</a></li>
             <li><a href="#contact" data-section="contact">Contact</a></li>
@@ -1312,7 +1436,7 @@
         <h1>I'm a doctor who <span>builds apps.</span></h1>
         <div class="accent-bar accent-bar-center"></div>
         <p>No software engineering degree. No coding bootcamp. Just Claude Code and a problem to solve. I'm Dr. Ismail Mbabali — a physician and Johns Hopkins-trained public health leader building mobile apps, websites, and tools from Kampala, Uganda.</p>
-        <p class="subtitle">7 projects shipped. Zero lines of code written before 2024.</p>
+        <p class="subtitle"><span data-live-count>10</span> projects shipped. Zero lines of code written before 2024.</p>
         <div class="hero-cta">
             <a href="#projects" class="btn btn-primary">See My Work <span class="arrow">&rarr;</span></a>
             <a href="#contact" class="btn btn-outline">Get in Touch</a>
@@ -1351,7 +1475,7 @@
                 <span class="timeline-icon">&#128640;</span>
                 <div class="timeline-phase-label green">The Builder</div>
                 <h3>Shipping real products — apps, websites, and tools</h3>
-                <p>Today I ship real software: a SACCO app in app stores, business websites, alumni directories. Every project built with Claude Code, from concept to deployment.</p>
+                <p>Today I ship real software: a SACCO app on the App Store and Google Play, operations platforms for two Kampala waste-collection companies, business websites and alumni directories. Every project built with Claude Code, from concept to deployment.</p>
             </div>
         </div>
     </div>
@@ -1367,6 +1491,7 @@
 
         <div class="filter-tabs">
             <button class="filter-tab active" data-filter="all">All</button>
+            <button class="filter-tab" data-filter="platform">Platforms</button>
             <button class="filter-tab" data-filter="mobile">Mobile Apps</button>
             <button class="filter-tab" data-filter="website">Websites</button>
             <button class="filter-tab" data-filter="community">Community Tools</button>
@@ -1385,10 +1510,9 @@
                     <h3>Money Hive — SACCO Management App</h3>
                     <p>A bookkeeping and record-keeping app for SACCOs, Chamas, and savings groups. Contribution tracking, loan ledger, fine management, member dashboards, admin tools, multi-group support, and PDF reports. Built for East Africa with support for UGX, KES, TZS, RWF, NGN, and GHS.</p>
                     <div class="tech-tags">
-                        <span class="tech-tag">Next.js 14</span>
+                        <span class="tech-tag">Next.js 15</span>
                         <span class="tech-tag">Capacitor</span>
                         <span class="tech-tag">Supabase</span>
-                        <span class="tech-tag">Stripe</span>
                         <span class="tech-tag">iOS</span>
                         <span class="tech-tag">Android</span>
                     </div>
@@ -1397,6 +1521,116 @@
                         <a href="https://apps.apple.com/ug/app/money-hive/id6758545614" class="project-link" target="_blank">App Store <span class="link-arrow">&rarr;</span></a>
                         <a href="https://play.google.com/store/apps/details?id=app.moneyhive.sacco" class="project-link" target="_blank">Google Play <span class="link-arrow">&rarr;</span></a>
                         <a href="#app-showcase" class="project-link">Screenshots <span class="link-arrow link-arrow-down">&darr;</span></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card reveal" data-category="platform">
+                <div class="project-screenshot"><img src="images/projects/bin-better/home.webp" alt="Bin Better homepage" loading="lazy" width="800" height="500"></div>
+                <div class="project-card-body">
+                    <div class="project-card-header">
+                        <div class="project-type" style="color: var(--green);">Operations Platform</div>
+                        <span class="project-status status-live">Live</span>
+                    </div>
+                    <h3>Bin Better</h3>
+                    <p>Staff platform and public website for a property waste-management company in Kampala. Field officers register each premise with photographs and GPS, every premise carries a printed QR label, and managers track collections, payments and arrears against an audit trail.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Next.js 16</span>
+                        <span class="tech-tag">Supabase</span>
+                        <span class="tech-tag">Leaflet Maps</span>
+                        <span class="tech-tag">QR Labels</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://www.binbetter.org" class="project-link" target="_blank">Visit Site <span class="link-arrow">&rarr;</span></a>
+                        <a href="#showcase-bin-better" class="project-link">Screenshots <span class="link-arrow link-arrow-down">&darr;</span></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card reveal" data-category="platform">
+                <div class="project-screenshot"><img src="images/projects/iges/home.webp" alt="IGES Waste Services homepage" loading="lazy" width="800" height="500"></div>
+                <div class="project-card-body">
+                    <div class="project-card-header">
+                        <div class="project-type" style="color: var(--terra-cotta);">Operations Platform</div>
+                        <span class="project-status status-live">Live</span>
+                    </div>
+                    <h3>IGES Waste Services</h3>
+                    <p>The Bin Better model rebuilt for a waste-collection company working five parishes and 36 zones of Rubaga South Division. Parish-aware customer codes, a zone finder for residents, and a staff register keyed from the company's paper records.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Next.js 16</span>
+                        <span class="tech-tag">Supabase</span>
+                        <span class="tech-tag">Leaflet Maps</span>
+                        <span class="tech-tag">QR Labels</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://www.igeswasteservices.com" class="project-link" target="_blank">Visit Site <span class="link-arrow">&rarr;</span></a>
+                        <a href="#showcase-iges" class="project-link">Screenshots <span class="link-arrow link-arrow-down">&darr;</span></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card reveal" data-category="mobile">
+                <div class="project-screenshot"><img src="images/projects/buyonjo/home.webp" alt="Buyonjo payment screen" loading="lazy" width="330" height="714" style="object-position: top;"></div>
+                <div class="project-card-body">
+                    <div class="project-card-header">
+                        <div class="project-type" style="color: var(--blue);">Mobile Payments App</div>
+                        <span class="project-status status-beta">Beta</span>
+                    </div>
+                    <h3>Buyonjo</h3>
+                    <p>Customers of waste-collection companies pay what they owe from their phone. They pick their company, enter a client ID or phone number, and approve a mobile-money prompt. No customer account is needed, and payments settle straight to each company's own merchant account.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Next.js 16</span>
+                        <span class="tech-tag">Capacitor 8</span>
+                        <span class="tech-tag">Supabase</span>
+                        <span class="tech-tag">MTN MoMo</span>
+                        <span class="tech-tag">Airtel Money</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://buyonjo.vercel.app" class="project-link" target="_blank">Visit Site <span class="link-arrow">&rarr;</span></a>
+                        <a href="#showcase-buyonjo" class="project-link">Screenshots <span class="link-arrow link-arrow-down">&darr;</span></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card reveal" data-category="website">
+                <div class="project-screenshot"><img src="images/projects/trace-core/home.webp" alt="Trace Core Africa homepage" loading="lazy" width="800" height="500"></div>
+                <div class="project-card-body">
+                    <div class="project-card-header">
+                        <div class="project-type" style="color: var(--blue);">Website</div>
+                        <span class="project-status status-live">Live</span>
+                    </div>
+                    <h3>Trace Core Africa</h3>
+                    <p>Website for a Kampala company that supplies tax stamp security, product authentication and supply-chain traceability to revenue authorities, ministries and security printers. Every statement on the site traces to a company document, and every image carries a recorded licence.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Next.js 16</span>
+                        <span class="tech-tag">TypeScript</span>
+                        <span class="tech-tag">Tailwind v4</span>
+                        <span class="tech-tag">Markdown Content</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://tracecoreafrica.com" class="project-link" target="_blank">Visit Site <span class="link-arrow">&rarr;</span></a>
+                        <a href="#showcase-trace-core" class="project-link">Screenshots <span class="link-arrow link-arrow-down">&darr;</span></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card reveal" data-category="platform">
+                <div class="project-screenshot"><img src="images/projects/modern-charm-invites/overview-1.webp" alt="Modern Charm personalised e-invites overview" loading="lazy" width="800" height="500"></div>
+                <div class="project-card-body">
+                    <div class="project-card-header">
+                        <div class="project-type" style="color: var(--terra-cotta);">Web Product</div>
+                        <span class="project-status status-live">Live</span>
+                    </div>
+                    <h3>Modern Charm Personalised E-Invites</h3>
+                    <p>A digital invitation product for an events company. Each guest gets a private link whose WhatsApp preview carries their own name and seat allowance. Hosts follow replies on a live RSVP board, and door staff scan QR passes on the day.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Next.js 16</span>
+                        <span class="tech-tag">Supabase</span>
+                        <span class="tech-tag">Row-Level Security</span>
+                        <span class="tech-tag">QR Passes</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#showcase-invites" class="project-link">How It Works <span class="link-arrow link-arrow-down">&darr;</span></a>
                     </div>
                 </div>
             </div>
@@ -1585,6 +1819,110 @@
             </div>
         </div>
 
+        <!-- Bin Better Showcase -->
+        <div class="app-showcase reveal" id="showcase-bin-better">
+            <div class="app-showcase-header">
+                <h3>Bin Better: Waste Management Platform</h3>
+                <span class="badge">Live Platform</span>
+            </div>
+            <p class="app-showcase-desc">
+                A public website and a staff-only platform for a property waste-management company in Mbuya, Kampala. Field officers register premises with photographs and GPS and print a QR label for each one. Collections and payments are recorded against that label, and managers watch arrears on charts and a map, with every change kept in an audit trail. <strong>Built with Claude Code</strong> on Next.js 16 and Supabase, and running on real customer records.
+            </p>
+
+            <div class="screenshots-section-label" style="color: var(--green);">Website Pages</div>
+            <div class="scroll-hint">Hover to pause</div>
+            <div class="carousel-container">
+                <div class="carousel-track web-track">
+                    <div class="web-screenshot"><img src="images/projects/bin-better/home.webp" alt="Bin Better homepage" loading="lazy" width="600" height="375"><div class="screenshot-label">Homepage</div></div>
+                    <div class="web-screenshot"><img src="images/projects/bin-better/services.webp" alt="Bin Better services" loading="lazy" width="600" height="375"><div class="screenshot-label">Services</div></div>
+                    <div class="web-screenshot"><img src="images/projects/bin-better/how-it-works.webp" alt="How Bin Better works" loading="lazy" width="600" height="375"><div class="screenshot-label">How It Works</div></div>
+                    <div class="web-screenshot"><img src="images/projects/bin-better/service-areas.webp" alt="Bin Better service areas" loading="lazy" width="600" height="375"><div class="screenshot-label">Service Areas</div></div>
+                    <div class="web-screenshot"><img src="images/projects/bin-better/about.webp" alt="About Bin Better" loading="lazy" width="600" height="375"><div class="screenshot-label">About</div></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- IGES Showcase -->
+        <div class="app-showcase reveal" id="showcase-iges">
+            <div class="app-showcase-header">
+                <h3>IGES Waste Services: Collection Platform</h3>
+                <span class="badge">Live Platform</span>
+            </div>
+            <p class="app-showcase-desc">
+                Forked from Bin Better and rebuilt for a five-parish operation in Rubaga South Division, Kampala, where two zones can share a name across parishes. Parishes became their own table, customer codes carry the parish, and residents find their zone by parish. The office's paper client register was keyed into the platform and checked row by row. <strong>Built with Claude Code</strong>.
+            </p>
+
+            <div class="screenshots-section-label" style="color: var(--terra-cotta);">Website Pages</div>
+            <div class="scroll-hint">Hover to pause</div>
+            <div class="carousel-container">
+                <div class="carousel-track web-track">
+                    <div class="web-screenshot"><img src="images/projects/iges/home.webp" alt="IGES Waste Services homepage" loading="lazy" width="600" height="375"><div class="screenshot-label">Homepage</div></div>
+                    <div class="web-screenshot"><img src="images/projects/iges/service-areas.webp" alt="IGES service areas and zone finder" loading="lazy" width="600" height="375"><div class="screenshot-label">Service Areas</div></div>
+                    <div class="web-screenshot"><img src="images/projects/iges/how-it-works.webp" alt="How IGES works" loading="lazy" width="600" height="375"><div class="screenshot-label">How It Works</div></div>
+                    <div class="web-screenshot"><img src="images/projects/iges/services.webp" alt="IGES services" loading="lazy" width="600" height="375"><div class="screenshot-label">Services</div></div>
+                    <div class="web-screenshot"><img src="images/projects/iges/contact.webp" alt="Request a collection from IGES" loading="lazy" width="600" height="375"><div class="screenshot-label">Request Collection</div></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Buyonjo Showcase -->
+        <div class="app-showcase reveal" id="showcase-buyonjo">
+            <div class="app-showcase-header">
+                <h3>Buyonjo: Mobile-Money Bill Payments</h3>
+                <span class="badge">Beta</span>
+            </div>
+            <p class="app-showcase-desc">
+                A bridge between waste-collection customers and the companies that serve them. A customer picks their company, types a client ID or phone number, sees what they owe and approves a mobile-money prompt with their PIN, with no account to create. Companies subscribe to be listed and connect their own MTN or Airtel merchant account, so the money settles straight to them and Buyonjo never holds customer funds. The Android and iOS apps wrap the same web app. <strong>Built with Claude Code</strong>, with payments in operator sandbox testing ahead of launch.
+            </p>
+
+            <div class="screenshots-section-label" style="color: var(--blue);">Mobile Screens</div>
+            <div class="static-row">
+                <div class="phone-screenshot"><img src="images/projects/buyonjo/home.webp" alt="Pay for waste collection" loading="lazy" width="220" height="476"><div class="screenshot-label">Pay a Bill</div></div>
+                <div class="phone-screenshot"><img src="images/projects/buyonjo/register.webp" alt="Register a waste company" loading="lazy" width="220" height="476"><div class="screenshot-label">Company Sign-Up</div></div>
+                <div class="phone-screenshot"><img src="images/projects/buyonjo/signin.webp" alt="Company sign in" loading="lazy" width="220" height="476"><div class="screenshot-label">Company Sign-In</div></div>
+            </div>
+        </div>
+
+        <!-- Trace Core Showcase -->
+        <div class="app-showcase reveal" id="showcase-trace-core">
+            <div class="app-showcase-header">
+                <h3>Trace Core Africa: Security and Traceability</h3>
+                <span class="badge">Live Site</span>
+            </div>
+            <p class="app-showcase-desc">
+                A credibility site for a company incorporated in Uganda in 2025 that supplies tax stamp security, product authentication, supply-chain traceability and security consumables to revenue authorities, ministries and security printers. The rebuild replaced a WordPress template with a statically generated site that publishes only what the company's own documents state, records a licence for every image, and keeps all content in Markdown and YAML files. <strong>Built with Claude Code</strong> on Next.js 16.
+            </p>
+
+            <div class="screenshots-section-label" style="color: var(--blue);">Website Pages</div>
+            <div class="scroll-hint">Hover to pause</div>
+            <div class="carousel-container">
+                <div class="carousel-track web-track">
+                    <div class="web-screenshot"><img src="images/projects/trace-core/home.webp" alt="Trace Core Africa homepage" loading="lazy" width="600" height="375"><div class="screenshot-label">Homepage</div></div>
+                    <div class="web-screenshot"><img src="images/projects/trace-core/capabilities.webp" alt="Trace Core capabilities" loading="lazy" width="600" height="375"><div class="screenshot-label">Capabilities</div></div>
+                    <div class="web-screenshot"><img src="images/projects/trace-core/excise.webp" alt="Tax stamps and excise assurance" loading="lazy" width="600" height="375"><div class="screenshot-label">Tax Stamps &amp; Excise</div></div>
+                    <div class="web-screenshot"><img src="images/projects/trace-core/digital.webp" alt="Digital systems for government" loading="lazy" width="600" height="375"><div class="screenshot-label">Digital Systems</div></div>
+                    <div class="web-screenshot"><img src="images/projects/trace-core/about.webp" alt="About Trace Core" loading="lazy" width="600" height="375"><div class="screenshot-label">About</div></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modern Charm E-Invites Showcase -->
+        <div class="app-showcase reveal" id="showcase-invites">
+            <div class="app-showcase-header">
+                <h3>Modern Charm Personalised E-Invites</h3>
+                <span class="badge">Live Product</span>
+            </div>
+            <p class="app-showcase-desc">
+                A multi-tenant invitation product added to the Modern Charm site, with the project's first database. Each guest receives a private link, and because the guest's code sits in the link path, the WhatsApp preview shows that guest's own name and seat allowance. Guests open a sealed envelope, reply in a few taps and receive a QR entry pass. Hosts watch a live RSVP board, and door staff scan each pass on the day. Guest data sits behind row-level security and hashed tokens. <strong>Built with Claude Code</strong>.
+            </p>
+
+            <div class="screenshots-section-label" style="color: var(--terra-cotta);">Product Overview</div>
+            <div class="static-row">
+                <div class="web-screenshot"><img src="images/projects/modern-charm-invites/overview-1.webp" alt="How the personalised e-invites work" loading="lazy" width="600" height="375"><div class="screenshot-label">How It Works</div></div>
+                <div class="web-screenshot"><img src="images/projects/modern-charm-invites/overview-2.webp" alt="Guest experience, RSVP board and check-in" loading="lazy" width="600" height="375"><div class="screenshot-label">Guests, Hosts &amp; Check-In</div></div>
+            </div>
+        </div>
+
         <!-- A Widow's Way Forward Showcase -->
         <div class="app-showcase reveal" id="showcase-awwf">
             <div class="app-showcase-header">
@@ -1689,7 +2027,7 @@
 <section>
     <div class="stats-bento reveal">
         <div class="stat-card featured">
-            <div class="number" data-target="8">0</div>
+            <div class="number" data-target="10" data-live-count>0</div>
             <div class="label">Projects Shipped</div>
         </div>
         <div class="stat-card">
@@ -1715,6 +2053,63 @@
     </div>
 </section>
 
+<!-- Health Data Work -->
+<section id="data-work">
+    <div class="section-label">Health Data Work</div>
+    <div class="section-title">The engines behind the numbers.</div>
+    <div class="accent-bar accent-bar-center"></div>
+    <p class="section-intro">Two recent examples of the data systems I build in public health practice. They are anonymised: the client data stays with the client, and what follows describes the method.</p>
+
+    <div class="case-grid">
+        <div class="case-card reveal">
+            <div class="case-meta">Independent verification &middot; PwC Uganda &middot; 2026</div>
+            <h3>Verifying hospital performance before a donor pays for it</h3>
+            <p>Donor-funded grant payments to 17 regional referral hospitals are released against each hospital's reported performance. The question was whether each hospital's own records could prove what it had reported, so that payment rested on verified results rather than self-reported figures.</p>
+            <h4>What I built</h4>
+            <p>I led the strategic information work and built the engine the verification ran on: a 492-question Qualtrics instrument, reported-versus-verified indicator tables, a dashboard and charts. Together they gave one consistent, auditable basis for judging 26 payment-linked indicators across every hospital.</p>
+            <ol class="pipeline">
+                <li>Desk review of national-system data in DHIS2 and the EMR</li>
+                <li>Five-day on-site checks of registers and patient files at each hospital</li>
+                <li>492-question verification instrument in Qualtrics</li>
+                <li>Reported-versus-verified tables for 26 payment-linked indicators</li>
+                <li>Dashboard, charts and the quarterly verification report</li>
+            </ol>
+            <p>The verification ran again over a second quarter with a new indicator, adding hospital-level integrity audits that caught data errors before results reached the client.</p>
+            <div class="tech-tags">
+                <span class="tech-tag">Qualtrics</span>
+                <span class="tech-tag">DHIS2</span>
+                <span class="tech-tag">EMR Review</span>
+                <span class="tech-tag">Data Quality Audit</span>
+                <span class="tech-tag">Dashboards</span>
+            </div>
+        </div>
+
+        <div class="case-card reveal reveal-delay-1">
+            <div class="case-meta">Baseline assessment &middot; Uganda &middot; 2026</div>
+            <h3>A reproducible baseline pipeline for HIV prevention among adolescent girls and young women</h3>
+            <p>A national HIV-prevention plan for adolescent girls and young women needed a baseline in two districts. Each district was to be described on its own, with health facilities shown by level and schools by primary, secondary and tertiary.</p>
+            <h4>What I built</h4>
+            <p>A scripted pipeline that turns the raw survey exports into one report per district and a dashboard with a tab per district. Every figure is computed from the raw exports and shows its base n. Facility level is parsed from the site name, and the readiness scorecard is labelled as a construct: the mean of named, computed indicators.</p>
+            <ol class="pipeline">
+                <li>Four ODK and KoboToolbox exports (community, district, health facility, school) and 21 focus-group and key-informant transcripts</li>
+                <li>Tabulation engine with validation, run on the untouched raw files</li>
+                <li>Data layer that feeds the charts, reports and dashboard</li>
+                <li>Infographics: readiness scorecard, by-level heatmaps, service cascade</li>
+                <li>Two district reports and a district-tab dashboard</li>
+            </ol>
+            <p>The dashboard carries a live-analysis sheet that recomputes its figures from the data, and that check stands at zero mismatches.</p>
+            <div class="tech-tags">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">pandas</span>
+                <span class="tech-tag">KoboToolbox / ODK</span>
+                <span class="tech-tag">matplotlib</span>
+                <span class="tech-tag">python-docx</span>
+                <span class="tech-tag">openpyxl</span>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- Experience -->
 <div class="section-cream" id="experience">
     <div class="container">
@@ -1735,21 +2130,26 @@
                 <p>Makerere University, Kampala, Uganda. One of Africa's premier medical schools.</p>
             </div>
             <div class="credential-card reveal reveal-delay-2">
+                <span class="year-badge">2026</span>
+                <h3>PwC Uganda</h3>
+                <p>Public Health, Monitoring &amp; Evaluation Expert (Consultant). Independent verification of donor-funded hospital performance data, and fiduciary and operational risk assessment of government health entities.</p>
+            </div>
+            <div class="credential-card reveal">
                 <span class="year-badge">2022–25</span>
                 <h3>USAID / Uganda</h3>
                 <p>Project Management Specialist — Led $39M HIV/TB portfolio across 112 districts. Pioneered digital health solutions adopted as national standards.</p>
             </div>
-            <div class="credential-card reveal">
+            <div class="credential-card reveal reveal-delay-1">
                 <span class="year-badge">2020–22</span>
                 <h3>USAID QED Learning Activity</h3>
                 <p>PEPFAR Strategic Information Specialist — Directed national health information system redesign serving 250,000+ children.</p>
             </div>
-            <div class="credential-card reveal reveal-delay-1">
+            <div class="credential-card reveal reveal-delay-2">
                 <span class="year-badge">2019–20</span>
                 <h3>DREAMS Program Manager</h3>
                 <p>JSI / RHITES-N, Lango — Led program turnaround across 8 districts. Designed M&E systems scaled nationally to 18 districts.</p>
             </div>
-            <div class="credential-card reveal reveal-delay-2">
+            <div class="credential-card reveal">
                 <span class="year-badge">2013–19</span>
                 <h3>Rakai Health Sciences Program</h3>
                 <p>Deputy Program Manager & Study Coordinator — 6-year tenure spanning program management, clinical research, and health systems strengthening.</p>
@@ -1977,6 +2377,13 @@
             el.style.display = pubsExpanded ? 'flex' : 'none';
         });
         pubToggle.textContent = pubsExpanded ? 'Show fewer' : 'Show all 10 publications';
+    });
+
+    // Shipped-project count is measured from the cards marked Live
+    const liveCount = document.querySelectorAll('.project-card .status-live').length;
+    document.querySelectorAll('[data-live-count]').forEach(el => {
+        if (el.dataset.target) el.dataset.target = liveCount;
+        else el.textContent = liveCount;
     });
 
     // Count-up animation for stats
