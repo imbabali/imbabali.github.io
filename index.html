@@ -974,6 +974,52 @@
             background: var(--mid-gray-decorative);
         }
         .pipeline li:last-child { margin-bottom: 0; background: rgba(217, 119, 87, 0.12); }
+        .instrument {
+            background: var(--warm-cream);
+            border-left: 3px solid var(--terra-cotta);
+            border-radius: 10px;
+            padding: 1rem 1.1rem;
+            margin: 1.1rem 0 0.4rem;
+        }
+        .instrument-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.66rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--terra-text);
+            margin: 0.2rem 0 0.35rem;
+        }
+        .instrument-name {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 0.4rem;
+        }
+        .instrument p { font-size: 0.86rem; margin-bottom: 0.7rem; }
+        .instrument-stats {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 0.5rem 0.9rem;
+            margin-bottom: 0.8rem;
+        }
+        .instrument-stats li { font-family: 'Inter', sans-serif; font-size: 0.74rem; color: var(--mid-gray); line-height: 1.35; }
+        .instrument-stats strong { display: block; font-size: 1.15rem; color: var(--dark); }
+        .systems { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+        .system {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 0.22rem 0.6rem;
+            border-radius: 100px;
+            background: white;
+            border: 1px solid var(--light-gray);
+            color: var(--dark-brown);
+        }
+        .case-did { margin: 0.2rem 0 0 1.1rem; }
+        .case-did li { font-size: 0.88rem; color: var(--mid-gray); line-height: 1.6; margin-bottom: 0.35rem; }
         .case-card .tech-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: auto; padding-top: 1.25rem; }
         .case-card .tech-tag {
             font-family: 'Inter', sans-serif;
@@ -1519,7 +1565,7 @@
                 <span class="timeline-icon">&#128640;</span>
                 <div class="timeline-phase-label green">The Builder</div>
                 <h3>Shipping real products — apps, websites, and tools</h3>
-                <p>Today I ship real software: a SACCO app on the App Store and Google Play, operations platforms for two Kampala waste-collection companies, business websites and alumni directories. Every project built with Claude Code, from concept to deployment.</p>
+                <p>Today I ship real software: a SACCO app on the App Store and Google Play, operations platforms for two Kampala waste-collection companies, business and school websites. Every project built with Claude Code, from concept to deployment.</p>
             </div>
         </div>
     </div>
@@ -1538,7 +1584,6 @@
             <button class="filter-tab" data-filter="platform" aria-pressed="false">Platforms</button>
             <button class="filter-tab" data-filter="mobile" aria-pressed="false">Mobile Apps</button>
             <button class="filter-tab" data-filter="website" aria-pressed="false">Websites</button>
-            <button class="filter-tab" data-filter="community" aria-pressed="false">Community Tools</button>
         </div>
 
         <div class="projects-grid">
@@ -1599,7 +1644,7 @@
                         <span class="project-status status-live">Live</span>
                     </div>
                     <h3>IGES Waste Services</h3>
-                    <p>The Bin Better model rebuilt for a waste-collection company working five parishes and 36 zones of Rubaga South Division. Parish-aware customer codes, a zone finder for residents, and a staff register keyed from the company's paper records.</p>
+                    <p>A waste-management platform for a company serving five parishes and 36 zones of Rubaga South Division. Field officers register premises with photographs, GPS and a QR label, collections and payments are recorded against each premise, and the office tracks arrears with a full audit trail. Parish-aware customer codes and a zone finder for residents.</p>
                     <div class="tech-tags">
                         <span class="tech-tag">Next.js 16</span>
                         <span class="tech-tag">Supabase</span>
@@ -1658,6 +1703,28 @@
                 </div>
             </div>
 
+
+            <div class="project-card reveal" data-category="website">
+                <div class="project-screenshot"><img src="images/projects/kibuli-ss/home.webp" alt="Kibuli Secondary School website homepage" loading="lazy" width="800" height="500"></div>
+                <div class="project-card-body">
+                    <div class="project-card-header">
+                        <div class="project-type" style="color: var(--green-text);">Website</div>
+                        <span class="project-status status-dev">Preview</span>
+                    </div>
+                    <h3>Kibuli Secondary School</h3>
+                    <p>A rebuild of the public website for Kibuli Secondary School, Kampala: nine public pages and a twelve-role portal demonstration, 74 pages in all. Every school fact on the site is drawn from three official school documents.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Next.js 16</span>
+                        <span class="tech-tag">TypeScript</span>
+                        <span class="tech-tag">Tailwind v4</span>
+                        <span class="tech-tag">Vercel</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://kibuli-ss-site.vercel.app" class="project-link" target="_blank">Visit Site <span class="link-arrow">&rarr;</span></a>
+                        <a href="#showcase-kibuli" class="project-link">Screenshots <span class="link-arrow link-arrow-down">&darr;</span></a>
+                    </div>
+                </div>
+            </div>
             <div class="project-card reveal" data-category="platform">
                 <div class="project-screenshot"><img src="images/projects/modern-charm-invites/overview-1.webp" alt="Modern Charm personalised e-invites overview" loading="lazy" width="800" height="500"></div>
                 <div class="project-card-body">
@@ -1675,23 +1742,6 @@
                     </div>
                     <div class="project-links">
                         <a href="#showcase-invites" class="project-link">How It Works <span class="link-arrow link-arrow-down">&darr;</span></a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-card reveal" data-category="mobile">
-                <div class="project-screenshot"><span class="placeholder-initials" aria-hidden="true">NMS</span></div>
-                <div class="project-card-body">
-                    <div class="project-card-header">
-                        <div class="project-type" style="color: var(--blue-text);">Mobile Application</div>
-                        <span class="project-status status-dev">In Dev</span>
-                    </div>
-                    <h3>NMS Waste Management</h3>
-                    <p>Mobile application for National Medical Stores waste tracking. Real-time waste logging, reporting dashboards, and compliance monitoring.</p>
-                    <div class="tech-tags">
-                        <span class="tech-tag">Flutter</span>
-                        <span class="tech-tag">Dart</span>
-                        <span class="tech-tag">Supabase</span>
                     </div>
                 </div>
             </div>
@@ -1783,39 +1833,6 @@
                 </div>
             </div>
 
-            <div class="project-card reveal" data-category="community">
-                <div class="project-screenshot"><span class="placeholder-initials" aria-hidden="true">K05</span></div>
-                <div class="project-card-body">
-                    <div class="project-card-header">
-                        <div class="project-type" style="color: var(--green-text);">Community Tool</div>
-                        <span class="project-status status-live">Live</span>
-                    </div>
-                    <h3>KOSA05 Class Directory</h3>
-                    <p>Alumni directory for King's College Budo Old Students. Member profiles, search, and contact management for a real community.</p>
-                    <div class="tech-tags">
-                        <span class="tech-tag">HTML</span>
-                        <span class="tech-tag">CSS</span>
-                        <span class="tech-tag">JavaScript</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-card reveal" data-category="community">
-                <div class="project-screenshot"><span class="placeholder-initials" aria-hidden="true">M06</span></div>
-                <div class="project-card-body">
-                    <div class="project-card-header">
-                        <div class="project-type" style="color: var(--terra-text);">Community Tool</div>
-                        <span class="project-status status-live">Live</span>
-                    </div>
-                    <h3>MUCHS-06 Class Directory</h3>
-                    <p>Alumni directory for Makerere University medical class of 2006. Member profiles, search, and contact management.</p>
-                    <div class="tech-tags">
-                        <span class="tech-tag">HTML</span>
-                        <span class="tech-tag">CSS</span>
-                        <span class="tech-tag">JavaScript</span>
-                    </div>
-                </div>
-            </div>
         </div>
 
         <!-- App Showcase -->
@@ -1889,7 +1906,7 @@
         <!-- IGES Showcase -->
         <div class="app-showcase reveal" id="showcase-iges">
             <div class="app-showcase-header">
-                <h3>IGES Waste Services: Collection Platform</h3>
+                <h3>IGES Waste Services: Waste Management Platform</h3>
                 <span class="badge">Live Platform</span>
             </div>
             <p class="app-showcase-desc">
@@ -1946,6 +1963,29 @@
                     <div class="web-screenshot"><img src="images/projects/trace-core/excise.webp" alt="Tax stamps and excise assurance" loading="lazy" width="600" height="375"><div class="screenshot-label">Tax Stamps &amp; Excise</div></div>
                     <div class="web-screenshot"><img src="images/projects/trace-core/digital.webp" alt="Digital systems for government" loading="lazy" width="600" height="375"><div class="screenshot-label">Digital Systems</div></div>
                     <div class="web-screenshot"><img src="images/projects/trace-core/about.webp" alt="About Trace Core" loading="lazy" width="600" height="375"><div class="screenshot-label">About</div></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Kibuli SS Showcase -->
+        <div class="app-showcase reveal" id="showcase-kibuli">
+            <div class="app-showcase-header">
+                <h3>Kibuli Secondary School: Website Rebuild</h3>
+                <span class="badge">Preview</span>
+            </div>
+            <p class="app-showcase-desc">
+                A statically generated rebuild of the public website for a Kampala secondary school founded in 1945: about, academics, student life, admissions, community, staff and contact pages, plus a portal demonstration for twelve roles. Every school fact lives in one content file sourced from three official school documents. <strong>Built with Claude Code</strong> on Next.js 16.
+            </p>
+
+            <div class="screenshots-section-label" style="color: var(--green-text);">Website Pages</div>
+            <div class="scroll-hint">Hover to pause</div>
+            <div class="carousel-container">
+                <div class="carousel-track web-track">
+                    <div class="web-screenshot"><img src="images/projects/kibuli-ss/home.webp" alt="Kibuli Secondary School homepage" loading="lazy" width="600" height="375"><div class="screenshot-label">Homepage</div></div>
+                    <div class="web-screenshot"><img src="images/projects/kibuli-ss/about.webp" alt="About Kibuli Secondary School" loading="lazy" width="600" height="375"><div class="screenshot-label">About</div></div>
+                    <div class="web-screenshot"><img src="images/projects/kibuli-ss/academics.webp" alt="Academics" loading="lazy" width="600" height="375"><div class="screenshot-label">Academics</div></div>
+                    <div class="web-screenshot"><img src="images/projects/kibuli-ss/student-life.webp" alt="Student life" loading="lazy" width="600" height="375"><div class="screenshot-label">Student Life</div></div>
+                    <div class="web-screenshot"><img src="images/projects/kibuli-ss/admissions.webp" alt="Admissions" loading="lazy" width="600" height="375"><div class="screenshot-label">Admissions</div></div>
                 </div>
             </div>
         </div>
@@ -2102,77 +2142,87 @@
     <div class="section-label">Health Data Work</div>
     <h2 class="section-title">The engines behind the numbers.</h2>
     <div class="accent-bar accent-bar-center"></div>
-    <p class="section-intro">Three recent examples of the data systems I build in public health practice. They are anonymised: the client data stays with the client, and what follows describes the method.</p>
+    <p class="section-intro">The instruments I design and the systems they work with, across five recent assignments. Client data stays with the client; what follows describes the instruments and the method.</p>
 
     <div class="case-grid">
         <div class="case-card reveal">
-            <div class="case-meta">Independent verification &middot; PwC Uganda &middot; 2026</div>
-            <h3>Verifying hospital performance before a donor pays for it</h3>
-            <p>Donor-funded grant payments to 17 regional referral hospitals are released against each hospital's reported performance. The question was whether each hospital's own records could prove what it had reported, so that payment rested on verified results rather than self-reported figures.</p>
-            <h4>What I built</h4>
-            <p>I led the strategic information work and built the engine the verification ran on: a 492-question Qualtrics instrument, reported-versus-verified indicator tables, a dashboard and charts. Together they gave one consistent, auditable basis for judging 26 payment-linked indicators across every hospital.</p>
-            <ol class="pipeline">
-                <li>Desk review of national-system data in DHIS2 and the EMR</li>
-                <li>Five-day on-site checks of registers and patient files at each hospital</li>
-                <li>492-question verification instrument in Qualtrics</li>
-                <li>Reported-versus-verified tables for 26 payment-linked indicators</li>
-                <li>Dashboard, charts and the quarterly verification report</li>
-            </ol>
-            <p>The verification ran again over a second quarter with a new indicator, adding hospital-level integrity audits that caught data errors before results reached the client. I co-authored the quarterly report, which the client adopted as the deliverable of record.</p>
-            <div class="tech-tags">
-                <span class="tech-tag">Qualtrics</span>
-                <span class="tech-tag">DHIS2</span>
-                <span class="tech-tag">EMR Review</span>
-                <span class="tech-tag">Data Quality Audit</span>
-                <span class="tech-tag">Dashboards</span>
+            <div class="case-meta">Data verification &middot; JSI &middot; Q3 and Q4 FY2026</div>
+            <h3>Verifying hospital results for performance-based grants, quarter three</h3>
+            <p>Health commitment grant payments to 17 regional referral hospitals are released against verified performance. For the April to June 2026 quarter, contracted directly by JSI, I rebuilt the verification on KoboToolbox with a live dashboard.</p>
+            <div class="instrument">
+                <div class="instrument-label">Instrument</div>
+                <div class="instrument-name">TIFA HCG Data Verification form, Q3 and Q4</div>
+                <p>A KoboToolbox XLSForm that carries each hospital&#39;s reported figures inside the form, so every field team compares reported against verified values on the spot, samples records and logs discrepancies as it goes.</p>
+                <ul class="instrument-stats"><li><strong>1,833</strong> form controls</li><li><strong>1,218</strong> built-in calculations</li><li><strong>27</strong> indicator codes</li><li><strong>88</strong> reported values pre-loaded per hospital</li><li><strong>136</strong> record-sampling cells</li><li><strong>148</strong> reported-versus-verified comparisons</li></ul>
+                <div class="instrument-label">Systems engaged</div>
+                <div class="systems"><span class="system">KoboToolbox</span><span class="system">Enketo</span><span class="system">KoboCollect</span><span class="system">Power BI (live from the Kobo API)</span><span class="system">DHIS2</span><span class="system">EMR</span><span class="system">Hospital registers and patient files</span><span class="system">Excel</span></div>
             </div>
+            <h4>What we did</h4>
+            <ul class="case-did"><li>Assessed the supporting documents every one of the 17 hospitals submitted for the quarter</li><li>Built a live Power BI dashboard: ten fact tables refresh from KoboToolbox as teams submit, beside fifteen reference tables from the payment instrument</li><li>Produced the indicator verification tables, narrative reports, payment summary and a presentation for the funder, with supporting documents redacted</li></ul>
         </div>
 
         <div class="case-card reveal reveal-delay-1">
-            <div class="case-meta">Fiduciary risk assessment &middot; PwC Uganda &middot; 2026</div>
-            <h3>Testing whether government health entities are ready for direct funding</h3>
-            <p>A move to government-to-government financing depends on whether ministries, medical stores, hospitals and district governments can receive funds on-budget and prove the milestones that release payment. As Monitoring and Evaluation Expert on the assessment, I owned daily data quality assurance across the national field deployment.</p>
-            <h4>What I built</h4>
-            <p>Assessment tools tailored to each kind of entity, informed by recurring weaknesses mined from prior audits, and a test of whether each entity's data and reporting systems could track and prove payment milestones.</p>
-            <ol class="pipeline">
-                <li>Prior audits mined for recurring weaknesses</li>
-                <li>Tools tailored to the ministry, national medical stores, hospitals and district governments</li>
-                <li>Every field team's evidence checked against source documents in real time</li>
-                <li>Data systems tested for milestone tracking: DHIS2, iHRIS, HCMS, eLMIS</li>
-                <li>Risks and strengths rated on the national risk matrix</li>
-            </ol>
-            <p>The findings went to a Kampala stakeholder workshop, where the funder and the government agreed the mitigation priorities to fix before funds flow.</p>
-            <div class="tech-tags">
-                <span class="tech-tag">Risk Assessment</span>
-                <span class="tech-tag">Data Quality Assurance</span>
-                <span class="tech-tag">DHIS2</span>
-                <span class="tech-tag">iHRIS</span>
-                <span class="tech-tag">eLMIS</span>
+            <div class="case-meta">Independent verification &middot; PwC Uganda &middot; Q1 and Q2 FY2026</div>
+            <h3>Verifying hospital performance before a donor pays for it</h3>
+            <p>Grant payments to 17 regional referral hospitals are released against each hospital&#39;s reported performance. I led the strategic information work behind the independent verification of whether each hospital&#39;s records could prove what it had reported.</p>
+            <div class="instrument">
+                <div class="instrument-label">Instrument</div>
+                <div class="instrument-name">492-question verification instrument</div>
+                <p>A Qualtrics instrument covering all 26 payment-linked indicators, paired with reported-versus-verified indicator tables, a dashboard and charts: one consistent, auditable basis for judging every hospital.</p>
+                <ul class="instrument-stats"><li><strong>492</strong> questions</li><li><strong>26</strong> payment-linked indicators</li><li><strong>17</strong> hospitals</li><li><strong>5</strong> days on site per hospital</li></ul>
+                <div class="instrument-label">Systems engaged</div>
+                <div class="systems"><span class="system">Qualtrics</span><span class="system">DHIS2</span><span class="system">EMR</span><span class="system">Hospital registers and patient files</span><span class="system">Excel dashboard</span></div>
             </div>
+            <h4>What we did</h4>
+            <ul class="case-did"><li>Paired a desk review of national-system data with five-day on-site checks of registers and patient files at each hospital</li><li>Re-ran the verification over a second quarter with a new referral-mapping indicator, adding hospital-level integrity audits that caught data errors before results reached the client</li><li>Co-authored the quarterly report, which the client adopted as the deliverable of record</li></ul>
         </div>
 
         <div class="case-card reveal reveal-delay-2">
+            <div class="case-meta">Fiduciary risk assessment &middot; PwC Uganda &middot; 2026</div>
+            <h3>Testing whether government health entities are ready for direct funding</h3>
+            <p>A move to government-to-government financing depends on whether ministries, medical stores, hospitals and district governments can receive funds on-budget and prove the milestones that release payment. I served as Monitoring and Evaluation Expert on the assessment.</p>
+            <div class="instrument">
+                <div class="instrument-label">Instrument</div>
+                <div class="instrument-name">Entity risk assessment tools</div>
+                <p>A fiduciary tool and an operational tool for each of five entity types, tailored to recurring weaknesses mined from prior audits, with a coded risk ID for every question and ratings on the national 4 &times; 4 risk matrix.</p>
+                <ul class="instrument-stats"><li><strong>5</strong> entity types</li><li><strong>2</strong> tool families: fiduciary and operational</li><li><strong>6</strong> fiduciary areas</li><li><strong>4 &times; 4</strong> national risk matrix</li></ul>
+                <div class="instrument-label">Systems engaged</div>
+                <div class="systems"><span class="system">DHIS2</span><span class="system">iHRIS</span><span class="system">HCMS</span><span class="system">eLMIS</span><span class="system">Audit reports</span></div>
+            </div>
+            <h4>What we did</h4>
+            <ul class="case-did"><li>Owned daily data quality assurance across the national field deployment, checking every team&#39;s evidence against source documents in real time</li><li>Tested whether each entity&#39;s data and reporting systems could track and prove payment milestones</li><li>Carried the findings into a Kampala stakeholder workshop, where the funder and the government agreed the mitigation priorities to fix before funds flow</li></ul>
+        </div>
+
+        <div class="case-card reveal">
             <div class="case-meta">Baseline assessment &middot; Uganda &middot; 2026</div>
             <h3>A reproducible baseline pipeline for HIV prevention among adolescent girls and young women</h3>
-            <p>A national HIV-prevention plan for adolescent girls and young women needed a baseline in two districts. Each district was to be described on its own, with health facilities shown by level and schools by primary, secondary and tertiary.</p>
-            <h4>What I built</h4>
-            <p>A scripted pipeline that turns the raw survey exports into one report per district and a dashboard with a tab per district. Every figure is computed from the raw exports and shows its base n. Facility level is parsed from the site name, and the readiness scorecard is labelled as a construct: the mean of named, computed indicators.</p>
-            <ol class="pipeline">
-                <li>Four ODK and KoboToolbox exports (community, district, health facility, school) and 21 focus-group and key-informant transcripts</li>
-                <li>Tabulation engine with validation, run on the untouched raw files</li>
-                <li>Data layer that feeds the charts, reports and dashboard</li>
-                <li>Infographics: readiness scorecard, by-level heatmaps, service cascade</li>
-                <li>Two district reports and a district-tab dashboard</li>
-            </ol>
-            <p>The dashboard carries a live-analysis sheet that recomputes its figures from the data, and that check stands at zero mismatches.</p>
-            <div class="tech-tags">
-                <span class="tech-tag">Python</span>
-                <span class="tech-tag">pandas</span>
-                <span class="tech-tag">KoboToolbox / ODK</span>
-                <span class="tech-tag">matplotlib</span>
-                <span class="tech-tag">python-docx</span>
-                <span class="tech-tag">openpyxl</span>
+            <p>A national HIV-prevention plan for adolescent girls and young women needed a baseline in two districts, each described on its own, with health facilities shown by level and schools by primary, secondary and tertiary.</p>
+            <div class="instrument">
+                <div class="instrument-label">Instrument</div>
+                <div class="instrument-name">Scripted analysis engine and district dashboard</div>
+                <p>A pipeline that tabulates the raw survey exports, validates them, and feeds one report per district and a dashboard with a tab per district. Every figure shows its base n, and the readiness scorecard is labelled as a construct: the mean of named, computed indicators.</p>
+                <ul class="instrument-stats"><li><strong>4</strong> survey tools: community, district, health facility, school</li><li><strong>21</strong> focus-group and key-informant transcripts</li><li><strong>2</strong> district reports</li><li><strong>0</strong> mismatches when the dashboard recomputes</li></ul>
+                <div class="instrument-label">Systems engaged</div>
+                <div class="systems"><span class="system">KoboToolbox / ODK</span><span class="system">Python (pandas, matplotlib)</span><span class="system">Excel dashboard</span><span class="system">Word</span></div>
             </div>
+            <h4>What we did</h4>
+            <ul class="case-did"><li>Built the tabulation engine, data layer, charts and infographics as scripts, so every figure traces to the raw exports</li><li>Designed the readiness scorecard, by-level heatmaps and service cascade for each district</li><li>Delivered two district reports and a district-tab dashboard whose live-analysis sheet recomputes its figures</li></ul>
+        </div>
+
+        <div class="case-card reveal reveal-delay-1">
+            <div class="case-meta">End-of-project evaluation &middot; South Sudan &middot; 2026</div>
+            <h3>Endline analysis for a UN Peacebuilding Fund project on young women&#39;s political participation</h3>
+            <p>A project supporting young women leaders in Juba, Wau and Yambio needed its endline survey analysed and consolidated into a UN-standard end-of-project evaluation report, working with the lead evaluation consultant.</p>
+            <div class="instrument">
+                <div class="instrument-label">Instrument</div>
+                <div class="instrument-name">Self-checking analysis engine and native-figure report</div>
+                <p>An engine that reads the two survey exports, runs its own consistency checks and writes every result to one file, from which the report, its figures and a companion workbook are generated. Every chart stays editable in Word.</p>
+                <ul class="instrument-stats"><li><strong>2</strong> surveys: young women leaders and stakeholders</li><li><strong>3</strong> locations</li><li><strong>44</strong> report pages</li><li><strong>41</strong> native, editable figures</li></ul>
+                <div class="instrument-label">Systems engaged</div>
+                <div class="systems"><span class="system">Microsoft Forms</span><span class="system">Python</span><span class="system">Word native charts</span><span class="system">Excel workbook</span><span class="system">LibreOffice render audit</span></div>
+            </div>
+            <h4>What we did</h4>
+            <ul class="case-did"><li>Matched survey results to the project&#39;s logframe indicators against baseline values and targets</li><li>Analysed the two datasets separately, by location and stakeholder group, and protected respondents&#39; confidentiality</li><li>Delivered the evaluation report in the UN register, with a reproducibility check that re-derived the annex figures from the raw data</li></ul>
         </div>
     </div>
 </section>
